@@ -5,7 +5,6 @@
     <title>A-security</title>
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/tech-servise.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="js/ajax_forms.js"></script>
   </head>
@@ -184,11 +183,19 @@
 
     <script>
       var header_button = document.querySelector(".main-header-btn");
+      var footer_button = document.querySelector(".s-footer-callback");
       var modal_window = document.querySelector(".modal-content-window");
       var modal_background = document.querySelector(".modal-background");
       var modal_content_close = modal_window.querySelector(".modal-content-close");
 
       header_button.addEventListener("click", function(modal){
+        modal.preventDefault();
+        modal_window.classList.add("modal-content-show");
+        modal_background.classList.add("modal-content-show")
+      });
+
+
+      footer_button.addEventListener("click", function(modal){
         modal.preventDefault();
         modal_window.classList.add("modal-content-show");
         modal_background.classList.add("modal-content-show")
