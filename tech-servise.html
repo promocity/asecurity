@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="ru">s
+<html lang="ru">
   <head>
     <meta charset="utf-8">
     <title>A-security</title>
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/tech-servise.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" href="img/favicon.jpg" type="image/jpg">
   </head>
   <body>
 
-
-    <header class="main-header">
+<header class="main-header">
       <div class="mid-container clearfix">
         <nav>
           <ul class="main-navigation">
@@ -79,111 +78,48 @@
         </div>
       </div>  
     </header>
+
   
-    <section class="index-content">
-      <div class="mid-container">
+    <div class="tech-serv-header-bg"></div>
+    <section class="tech-servise mid-container">
+		<h1 class="tech-serv-header">Техническое подразделение для решения соответствующих задач</h1>
+		<div class="tech-serv-logo"></div>
+		<p class="tech-serv-text">Работая с компанией ASecurity, Вы получаете возможность пользоваться передовыми системами безопасности и контороля. Мы предоставляем услуги монтажа и технического сопровождения систем:</p>
+		<ul class="services clearfix">
+			<li>
+				<p class="services-caption">Охранная и пожарная сигнализация</p>
+			</li>
+			<li>
+				<p class="services-caption">Контроль и управление доступом</p>
+			</li>
+			<li>
+				<p class="services-caption">Речевое оповещение и эвакуация людей</p>
+			</li>
+			<li>
+				<p class="services-caption">Видеонаблюдение<span>(в том числе в online режиме)</span></p>
+			</li>
+			<li>
+				<p class="services-caption">Система пожаротушения</p>
+			</li>
+			<li>
+				<p class="services-caption">Система дымоудаления</p>
+			</li>
+		</ul>
+   </section>
 
-      <div class="index-container mid-container">  
-        <a class="index-big-banner" href="#">
-          <img src="img/index-big-banner-1.png" width="211" height="243" alt="">
-          <img src="img/index-big-banner-1-active.png" width="499" height="418" alt="">
-        </a>
-          
-        <a class="index-big-banner" href="#">
-          <img src="img/index-big-banner-2.png" width="211" height="243" alt="">
-          <img src="img/index-big-banner-2-active.png" width="212" height="339" alt="">
-        </a>
+   <div style="background:url(img/inner-page-form-bg.png) no-repeat; padding-top:1px;">
+    <div class="mid-container">
+      <h2 class="inner-page-form-title">Оставьте отзыв. Ваше мнение для нас важно.</h2>
 
-        <a class="index-big-banner" href="#">
-          <img src="img/index-big-banner-3.png" width="211" height="243" alt="">
-          <img src="img/index-big-banner-3-active.png" width="498" height="420" alt="">
-        </a>
-      </div>  
-
-      <div class="index-container mid-container">
-        <a class="index-small-banner" href="#">
-          <img src="img/index-small-banner-1.png" width="170" height="194" alt="">
-          <img class="small-banner-img small-banner-img-1" src="img/index-small-banner-1-active.png" width="345" height="200" alt="">
-        </a>
-      
-        <div class="flip-container banner-logo" ontouchstart="this.classList.toggle('hover');">     
-          <div class="flipper">
-            <div class="front">
-              <a class="index-logo-banner" href="javascript:void(0);">
-                <img src="img/index-logo-banner.png" width="136" height"158" alt="">
-              </a>
-            </div>
-            <div class="back">
-              <a class="index-logo-banner" href="javascript:void(0);">
-                <img src="img/index-logo-banner.png" width="136" height"158" alt="">
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <a class="index-small-banner" href="#">
-          <img src="img/index-small-banner-2.png" width="170" height="194" alt="">
-          <img class="small-banner-img small-banner-img-2" src="img/index-small-banner-2-active.png" width="350" height="207" alt="">
-        </a>    
-      </div> 
-
-      <div class="index-container mid-container"> 
-
-        <a class="index-small-banner" href="#">
-          <img src="img/index-small-banner-3.png" width="170" height="194" alt="">
-          <img class="small-banner-img small-banner-img-3" src="img/index-small-banner-3-active.png" width="505" height="361" alt="">
-        </a>
-
-        <a class="index-small-banner" href="#">
-          <img src="img/index-small-banner-4.png" width="170" height="194" alt="">
-          <img class="small-banner-img small-banner-img-4" src="img/index-small-banner-4-active.png" width="294" height="365" alt="">
-        </a>
-
-        <a class="index-small-banner" href="#">
-          <img src="img/index-small-banner-5.png" width="170" height="194" alt="">
-          <img class="small-banner-img small-banner-img-5" src="img/index-small-banner-5-active.png" width="295" height="366" alt="">
-        </a>
-
-        <a class="index-small-banner" href="#">
-          <img src="img/index-small-banner-6.png" width="170" height="194" alt="">
-          <img class="small-banner-img small-banner-img-6" src="img/index-small-banner-6-active.png" width="506" height="362" alt="">
-        </a>
-
-      </div>
-
-      </div>
-
-    </section>
-
-  <div class="safety-system">Дистанционная система безопасности</div>  
+      <form class="inner-page-form" action="/echo" method="post">
+        <input type="text" name="name" placeholder="Ваше имя...">
+        <textarea rows="5"></textarea>
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+    </div>
 
 
-    <section class="cliens-list">
-      <div class="mid-container">
-        <h1>Нам доверяют</h1>
-        <section class="client-list-content">
-          <img src="img/client-list-item-1.png" width="163" height="162" alt="Иннопром"><!--
-       --><img src="img/client-list-item-2.png" width="163" height="162" alt="Сбербанк"><!--
-       --><img src="img/client-list-item-3.png" width="163" height="162" alt="Банк Зенит"><!--
-       --><img src="img/client-list-item-4.png" width="163" height="162" alt="Forum group"><!--
-       --><img src="img/client-list-item-5.png" width="163" height="162" alt="УралТрансБанк"><!--
-       --><img src="img/client-list-item-6.png" width="163" height="162" alt="Вектор"><!--
-       --><img src="img/client-list-item-7.png" width="163" height="162" alt="Ельцин Центр"><!--
-       --><img src="img/client-list-item-8.png" width="163" height="162" alt="Мир"><!--
-       --><img src="img/client-list-item-9.png" width="163" height="162" alt="Челиндбанк"><!--
-       --><img src="img/client-list-item-10.png" width="163" height="162" alt="RED"><!--
-       --><img src="img/client-list-item-11.png" width="163" height="162" alt="Уральская промышленная палата"><!--
-       --><img src="img/client-list-item-12.png" width="163" height="162" alt="Golden Parks"><!--
-       --><img src="img/client-list-item-13.png" width="163" height="162" alt="Senat"><!--
-       --><img src="img/client-list-item-14.png" width="163" height="162" alt="Гериес Плаза"><!--
-       --><img src="img/client-list-item-15.png" width="163" height="162" alt="Русград"><!--
-       --><img src="img/client-list-item-16.png" width="163" height="162" alt="Экстрол"><!--
-       --><img src="img/client-list-item-17.png" width="163" height="162" alt="Общество малышева 73"><!--
-       --><img src="img/client-list-item-18.png" width="163" height="162" alt="Палладиум"><!--
-       --><img src="img/client-list-item-19.png" width="163" height="162" alt="Завод"><!--
-       --><img src="img/client-list-item-20.png" width="163" height="162" alt="Связь Банк">
-      </div>  
-    </section>
   
   <footer class="second-footer clearfix">
     <div class="mid-container">
@@ -245,19 +181,11 @@
 
     <script>
       var header_button = document.querySelector(".main-header-btn");
-      var footer_button = document.querySelector(".s-footer-callback");
       var modal_window = document.querySelector(".modal-content-window");
       var modal_background = document.querySelector(".modal-background");
       var modal_content_close = modal_window.querySelector(".modal-content-close");
 
       header_button.addEventListener("click", function(modal){
-        modal.preventDefault();
-        modal_window.classList.add("modal-content-show");
-        modal_background.classList.add("modal-content-show")
-      });
-
-
-      footer_button.addEventListener("click", function(modal){
         modal.preventDefault();
         modal_window.classList.add("modal-content-show");
         modal_background.classList.add("modal-content-show")
