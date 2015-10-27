@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
     <link rel="stylesheet" href="owl-carousel/owl.theme.css">
   	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="js/order_security_form.js"></script>
-    <script type="text/javascript" src="js/calculator_prices_home.js"></script>
+    <script type="text/javascript" src="js/ajax_forms.js"></script>
+    <script type="text/javascript" src="js/calculator.js"></script>
     <link rel="shortcut icon" href="img/favicon.jpg" type="image/jpg">
   </head>
   <body>
@@ -97,11 +97,11 @@
 
           <ul>
             <li>
-              <input type="checkbox" name="signaling" id="signaling"  onchange="calculate(this)">
+              <input type="checkbox" name="signaling" id="signaling"  onchange="calculate(this,'home')" checked>
               <label for="signaling">Охранная сигнализация</label>
             </li>
             <li>
-              <input type="checkbox" name="alarm-button" id="alarm-button"  onchange="calculate(this)">
+              <input type="checkbox" name="alarm-button" id="alarm-button"  onchange="calculate(this,'home')">
               <label for="alarm-button">Тревожная кнопка</label>
             </li>
           </ul>
@@ -144,7 +144,7 @@
 
               <div class="service-slider-item">
                 <div class="service-slider-icon-4"></div>
-                <div class="slider-item-title"><input type="checkbox" name="сервисное обслуживание" id="service"  onchange="calculate(this)"><label for="service"><i class="slider-item-title-icon"></i>Сервисное обслуживание</label></div>
+                <div class="slider-item-title"><input type="checkbox" name="сервисное обслуживание" id="service"  onchange="calculate(this,'home')"><label for="service"><i class="slider-item-title-icon"></i>Сервисное обслуживание</label></div>
                 <span class="slider-item-description">Диагностика охранного комплекса, выявлеие
                 неполадок, и их устранение в режиме 24/7 </span>
                 <div class="slider-item-price">
@@ -156,7 +156,7 @@
               <div class="service-slider-item">
                 <div class="service-slider-icon-1"></div>
                 <div class="slider-item-title">
-                  <input type="checkbox" name="Утечка газа" id="gas"  onchange="calculate(this)">
+                  <input type="checkbox" name="Утечка газа" id="gas"  onchange="calculate(this,'home')">
                   <label for="gas"><i class="slider-item-title-icon"></i>Оповещение об утечке газа</label>
                 </div>
                 <span class="slider-item-description">Система своевременно уведомляет о наличии 
@@ -169,7 +169,7 @@
 
               <div class="service-slider-item">
                 <div class="service-slider-icon-2"></div>
-                <div class="slider-item-title"><input type="checkbox" name="Затопление" id="water"  onchange="calculate(this)"><label for="water"><i class="slider-item-title-icon"></i>Оповещение о затоплении</label></div>
+                <div class="slider-item-title"><input type="checkbox" name="Затопление" id="water"  onchange="calculate(this,'home')"><label for="water"><i class="slider-item-title-icon"></i>Оповещение о затоплении</label></div>
                 <span class="slider-item-description">Своевременное уведомление об угрозе затопления 
                 как с вашей стороны, так и вашего помещения извне.</span>
                 <div class="slider-item-price">
@@ -180,7 +180,7 @@
 
               <div class="service-slider-item">
                 <div class="service-slider-icon-3"></div>
-                <div class="slider-item-title"><input type="checkbox" name="Возгорание" id="fire"  onchange="calculate(this)"><label for="fire"><i class="slider-item-title-icon"></i>Оповещение о возгорании</label></div>
+                <div class="slider-item-title"><input type="checkbox" name="Возгорание" id="fire"  onchange="calculate(this,'home')"><label for="fire"><i class="slider-item-title-icon"></i>Оповещение о возгорании</label></div>
                 <span class="slider-item-description">Система своевременно уведомляет об угрозе  
                 задымления и возникновения пожара.</span>
                 <div class="slider-item-price">
@@ -193,7 +193,7 @@
             <div class="item">
               <div class="service-slider-item">
                 <div class="service-slider-icon-5"></div>
-                <div class="slider-item-title"><input type="checkbox" name="ночной режим" id="night" onchange="calculate(this)"><label for="night"><i class="slider-item-title-icon"></i>Ночной режим</label></div>
+                <div class="slider-item-title"><input type="checkbox" name="ночной режим" id="night" onchange="calculate(this,'home')"><label for="night"><i class="slider-item-title-icon"></i>Ночной режим</label></div>
                 <span class="slider-item-description">Позволяет поставить объект на охрану тогда, 
                   когда вы находитесь внутри помещения</span>
                 <div class="slider-item-price">
@@ -204,7 +204,7 @@
 
               <div class="service-slider-item">
                 <div class="service-slider-icon-6"></div>
-                <div class="slider-item-title"><input type="checkbox" name="онлайн контроль" id="online_control" onchange="calculate(this)"><label for="online_control"><i class="slider-item-title-icon"></i>Online контроль</label></div>
+                <div class="slider-item-title"><input type="checkbox" name="онлайн контроль" id="online_control" onchange="calculate(this,'home')"><label for="online_control"><i class="slider-item-title-icon"></i>Online контроль</label></div>
                 <span class="slider-item-description">Находясь в отъезде вы сможете 24 часа в сутки
                 быть в курсе происходящего  </span>
                 <div class="slider-item-price">
@@ -242,35 +242,35 @@
 
            <ul class="price-block-additionally">
              <li>
-               <input type="checkbox" name="additional-block-security" id="additional-block-security" onchange="calculate(this)">
+               <input type="checkbox" name="additional-block-security" id="additional-block-security" onchange="calculate(this,'home')">
                <label for="additional-block-security">Охранная сигнализация</label>
              </li>
              <li>
-               <input type="checkbox" name="additional-block-alarm-button" id="additional-block-alarm-button" onchange="calculate(this)">
+               <input type="checkbox" name="additional-block-alarm-button" id="additional-block-alarm-button" onchange="calculate(this,'home')">
                <label for="additional-block-alarm-button">Тревожная кнопка</label>
              </li>
              <li>
-               <input type="checkbox" name="additional-block-gas" id="additional-block-gas" onchange="calculate(this)">
+               <input type="checkbox" name="additional-block-gas" id="additional-block-gas" onchange="calculate(this,'home')">
                <label for="additional-block-gas">Оповещение об утечке газа</label>
              </li>
              <li>
-               <input type="checkbox" name="additional-block-fire" id="additional-block-fire" onchange="calculate(this)">
+               <input type="checkbox" name="additional-block-fire" id="additional-block-fire" onchange="calculate(this,'home')">
                <label for="additional-block-fire">Оповещение о возгарании</label>
              </li>
              <li>
-               <input type="checkbox" name="additional-block-water" id="additional-block-water" onchange="calculate(this)">
+               <input type="checkbox" name="additional-block-water" id="additional-block-water" onchange="calculate(this,'home')">
                <label for="additional-block-water">Оповещение о затоплении</label>
              </li>
              <li>
-               <input type="checkbox" name="additional-block-service" id="additional-block-service" onchange="calculate(this)">
+               <input type="checkbox" name="additional-block-service" id="additional-block-service" onchange="calculate(this,'home')">
                <label for="additional-block-service">Сервисное обслуживание</label>
              </li>
              <li>
-               <input type="checkbox" name="additional-block-night" id="additional-block-night" onchange="calculate(this)">
+               <input type="checkbox" name="additional-block-night" id="additional-block-night" onchange="calculate(this,'home')">
                <label for="additional-block-night">Ночной режим</label>
              </li>
              <li>
-               <input type="checkbox" name="additional-block-online-control" id="additional-block-online-control" onchange="calculate(this)">
+               <input type="checkbox" name="additional-block-online-control" id="additional-block-online-control" onchange="calculate(this,'home')">
                <label for="additional-block-online-control">Online контроль</label>
              </li>
            </ul>
@@ -300,9 +300,9 @@
       <h2 class="inner-page-form-title">Оставьте отзыв. Ваше мнение для нас важно.</h2>
 
       <form class="inner-page-form" action="/echo" method="post">
-        <input type="text" name="name" placeholder="Ваше имя...">
-        <textarea rows="5"></textarea>
-        <button type="submit">Отправить</button>
+        <input type="text" name="name" id="feedback_name" placeholder="Ваше имя...">
+        <textarea rows="5" id="feedback_text"></textarea>
+        <button type="button" onclick="FeedbackSend()">Отправить</button>
       </form>
     </div>
     </div>
@@ -361,9 +361,9 @@
           Специалист компании ASecurity свяжется с Вами,<br>
           чтобы ответить на Ваши вопросы.
         </p>
-        <input type="text" name="Имя" placeholder="Имя">
-        <input type="tel" name="Телефон" placeholder="Телефон">
-        <button type="submit">Заказать</button>
+        <input type="text" name="Имя" id="call_name" placeholder="Имя">
+        <input type="tel" name="Телефон" id="call_tel" placeholder="Телефон">
+        <button type="button" onclick="Callme()">Заказать</button>
         <span>или перезвоните нам по телефону</span>
         <span>+7 (343) 288-78-56</span>
       </form>
@@ -427,9 +427,9 @@
       // itemsDesktopSmall : false,
       // itemsTablet: false,
       // itemsMobile : false
- 
+	
   });
- 
+	calculate('','home'); //выполнение расчетов при загрузке
 });
     </script>  
     <script>

@@ -7,8 +7,11 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/tech-servise.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="js/ajax_forms.js"></script>
   </head>
   <body>
+
+  <a class="index-btn" href="index.html">На главную</a>
 
 <header class="main-header">
       <div class="mid-container clearfix">
@@ -87,34 +90,34 @@
 		<p class="tech-serv-text">Работая с компанией ASecurity, Вы получаете возможность пользоваться передовыми системами безопасности и контороля. Мы предоставляем услуги монтажа и технического сопровождения систем:</p>
 		<ul class="services clearfix">
 			<li>
-				<p class="services-caption caption-1">Охранная и пожарная сигнализация</p>
+				<p class="services-caption">Охранная и пожарная сигнализация</p>
 			</li>
 			<li>
-				<p class="services-caption caption-2">Контроль и управление доступом</p>
+				<p class="services-caption">Контроль и управление доступом</p>
 			</li>
 			<li>
-				<p class="services-caption caption-3">Речевое оповещение и эвакуация людей</p>
+				<p class="services-caption">Речевое оповещение и эвакуация людей</p>
 			</li>
 			<li>
-				<p class="services-caption caption-4">Видеонаблюдение<span>(в том числе в online режиме)</span></p>
+				<p class="services-caption">Видеонаблюдение<span>(в том числе в online режиме)</span></p>
 			</li>
 			<li>
-				<p class="services-caption caption-5">Система пожаротушения</p>
+				<p class="services-caption">Система пожаротушения</p>
 			</li>
 			<li>
-				<p class="services-caption caption-6">Система дымоудаления</p>
+				<p class="services-caption">Система дымоудаления</p>
 			</li>
 		</ul>
    </section>
 
    <div style="background:url(img/inner-page-form-bg.png) no-repeat; padding-top:1px;">
     <div class="mid-container">
-      <h2 class="callback-question ">Есть вопросы ? <span>.Мы поможем!</span><br>Оформите заявку и мы перезвоним</h2>
+      <h2 class="inner-page-form-title">Оставьте отзыв. Ваше мнение для нас важно.</h2>
 
-      <form class="tech-serv-callback" action="/echo" method="post">
-        <input class="your-name" type="text" name="name" placeholder="Имя">
-        <input class="tel" type="text" name="telephone" placeholder="Телефон">
-		<button class="tech-serv-button" type="submit">Заказать</button>
+      <form class="inner-page-form" action="/echo" method="post">
+        <input type="text" name="name" id="feedback_name" placeholder="Ваше имя...">
+        <textarea rows="5" id="feedback_text"></textarea>
+        <button type="button" onclick="FeedbackSend()">Отправить</button>
       </form>
     </div>
     </div>
@@ -170,9 +173,9 @@
           Специалист компании ASecurity свяжется с Вами,<br>
           чтобы ответить на Ваши вопросы.
         </p>
-        <input type="text" name="Имя" placeholder="Имя">
-        <input type="tel" name="Телефон" placeholder="Телефон">
-        <button type="submit">Заказать</button>
+        <input type="text" name="Имя" id="call_name" placeholder="Имя">
+        <input type="tel" name="Телефон" id="call_tel" placeholder="Телефон">
+        <button type="button" onclick="Callme()">Заказать</button>
         <span>или перезвоните нам по телефону</span>
         <span>+7 (343) 288-78-56</span>
       </form>

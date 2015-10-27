@@ -7,6 +7,7 @@
   	<link href="css/style.css" rel="stylesheet">
   	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="img/favicon.jpg" type="image/jpg">
+	<script type="text/javascript" src="js/ajax_forms.js"></script>
   </head>
   <body>
 
@@ -100,12 +101,12 @@
         <div class="contacts-form-title">Есть вопросы? Напишите нам</div>
         <div class="contact-form-content clearfix">
           <div class="contacts-col-left">
-            <input type="text" name="name" placeholder="Имя">
-            <input type="tel" name="contact-number" placeholder="Телефон">
-            <button type="submit">Отправить</button>
+            <input type="text" name="name" id="contact_name" placeholder="Имя">
+            <input type="tel" name="contact-number" id="contact_tel" placeholder="Телефон">
+            <button type="button" onclick="SendQuestion()">Отправить</button>
           </div>
           <div class="contacts-col-right">
-            <textarea rows="7">Текст сообщения</textarea>
+            <textarea rows="7" id="contact_text">Текст сообщения</textarea>
           </div>
         </div>  
       </form>
@@ -159,9 +160,9 @@
           Специалист компании ASecurity свяжется с Вами,<br>
           чтобы ответить на Ваши вопросы.
         </p>
-        <input type="text" name="Имя" placeholder="Имя">
-        <input type="tel" name="Телефон" placeholder="Телефон">
-        <button type="submit">Заказать</button>
+        <input type="text" name="Имя" id="call_name" placeholder="Имя">
+        <input type="tel" name="Телефон" id="call_tel" placeholder="Телефон">
+        <button type="button" onclick="Callme()">Заказать</button>
         <span>или перезвоните нам по телефону</span>
         <span>+7 (343) 288-78-56</span>
       </form>

@@ -1,4 +1,5 @@
-var default_signality = false;
+//состояния нажатых чекбоксов по умолчанию
+var default_signality = true;
 var default_alarm_button = false;
 var default_gas = false;
 var default_fire = false;
@@ -7,15 +8,81 @@ var default_service = false;
 var default_night = false;
 var default_online_control = false;
 
-function calculate(clicked_element){	
-	//С†РµРЅР° РІРІРµСЂС…Сѓ СЃС‚СЂР°РЅРёС†С‹
+function calculate(clicked_element,page){	
+	//ценовые значения для каждой из страниц
+        //...price1 - стоимость установки
+        //...price2 - стоимость  обслуживания
+        switch (page){
+            case 'home':
+                var signaling_price1 = 17790;
+                var signaling_price2 = 1500;
+                var alarm_button_price1 = 2000;
+                var alarm_button_price2 = 300;
+                var alarm_button_alone_price_1 = 8200;
+                var alarm_button_alone_price_2 = 2000;
+                var gas_price1 = 2500;
+                var gas_price2 = 50;
+                var fire_price1 = 2500;
+                var fire_price2 = 50;
+                var water_price1 = 2500;
+                var water_price2 = 50;
+                var service_price1 = 0;
+                var service_price2 = 0;
+                var night_price1 = 2500;
+                var night_price2 = 50;
+                var online_control_price1 = 0;
+                var online_control_price2 = 100;
+                break;
+            case 'flat':
+                var signaling_price1 = 12590;
+                var signaling_price2 = 600;
+                var alarm_button_price1 = 2000;
+                var alarm_button_price2 = 300;
+                var alarm_button_alone_price_1 = 8200;
+                var alarm_button_alone_price_2 = 2000;
+                var gas_price1 = 2500;
+                var gas_price2 = 50;
+                var fire_price1 = 2500;
+                var fire_price2 = 50;
+                var water_price1 = 2500;
+                var water_price2 = 50;
+                var service_price1 = 0;
+                var service_price2 = 0;
+                var night_price1 = 2500;
+                var night_price2 = 50;
+                var online_control_price1 = 0;
+                var online_control_price2 = 100;
+                break;
+            case 'business':
+                var signaling_price1 = 17790;
+                var signaling_price2 = 2200;
+                var alarm_button_price1 = 2000;
+                var alarm_button_price2 = 300;
+                var alarm_button_alone_price_1 = 8200;
+                var alarm_button_alone_price_2 = 2000;
+                var gas_price1 = 2500;
+                var gas_price2 = 50;
+                var fire_price1 = 2500;
+                var fire_price2 = 50;
+                var water_price1 = 2500;
+                var water_price2 = 50;
+                var service_price1 = 0;
+                var service_price2 = 0;
+                var night_price1 = 2500;
+                var night_price2 = 50;
+                var online_control_price1 = 0;
+                var online_control_price2 = 100;
+                break;
+        }
+	
+        //цена вверху страницы
 	var price_up = document.getElementById('security-home-content-price');
 	
-	//СѓСЃР»СѓРіРё
+	//услуги
 	var signaling = document.getElementById('signaling');
 	var alarm_button = document.getElementById('alarm-button');
 	
-	//РґРѕРї. СѓСЃР»СѓРіРё
+	//доп. услуги
 	var gas = document.getElementById('gas');
 	var fire = document.getElementById('fire');
 	var water = document.getElementById('water');
@@ -23,34 +90,15 @@ function calculate(clicked_element){
 	var night = document.getElementById('night');
 	var online_control = document.getElementById('online_control');
 	
-	//СЃС‚РѕРёРјРѕСЃС‚СЊ Рё С†РµРЅР° РІ РјРµСЃВ¤С† РІРЅРёР·Сѓ СЃС‚СЂР°РЅРёС†С‹
+	//стоимость и цена в мес¤ц внизу страницы
 	var price_down1 = document.getElementById('price-block-price');
 	var price_down2 = document.getElementById('price-block-price-month');
-	
-	//price1 - СЃС‚РѕРёРјРѕСЃС‚СЊ СѓСЃС‚Р°РЅРѕРІРєРё
-	//price2 - СЃС‚РѕРёРјРѕСЃС‚СЊ РѕР±СЃР»СѓР¶РёРІР°РЅРёВ¤
-	var signaling_price1 = 17790;
-	var signaling_price2 = 2200;
-	var alarm_button_price1 = 2000;
-	var alarm_button_price2 = 300;
-	var alarm_button_alone_price_1 = 8200;
-	var alarm_button_alone_price_2 = 2000;
-	var gas_price1 = 2500;
-	var gas_price2 = 50;
-	var fire_price1 = 2500;
-	var fire_price2 = 50;
-	var water_price1 = 2500;
-	var water_price2 = 50;
-	var service_price1 = 0;
-	var service_price2 = 0;
-	var night_price1 = 2500;
-	var night_price2 = 50;
-	var online_control_price1 = 0;
-	var online_control_price2 = 100;
-
+        
+        //итоговый результат
 	var price1_result = 0 ;
 	var price2_result = 0 ;
 	
+        //блок дополнительных услуг
 	var signaling2 = document.getElementById('additional-block-security');
 	var alarm_button2 = document.getElementById('additional-block-alarm-button');
 	var gas2 = document.getElementById('additional-block-gas');
@@ -60,42 +108,43 @@ function calculate(clicked_element){
 	var night2 = document.getElementById('additional-block-night');
 	var online_control2 = document.getElementById('additional-block-online-control');
 	
+	if (clicked_element != ''){
+        //замена отметки чекбокса на противоположную
+		if (clicked_element == signaling || clicked_element == signaling2){
+			default_signality = !default_signality;
+		}
+		if (clicked_element == alarm_button || clicked_element == alarm_button2){
+			default_alarm_button = !default_alarm_button;
+		}
+		if (clicked_element == gas || clicked_element == gas2){
+			default_gas = !default_gas;
+		}
+		if (clicked_element == fire || clicked_element == fire2){
+			default_fire = !default_fire;
+		}
+		if (clicked_element == water || clicked_element == water2){
+			default_water = !default_water;
+		}
+		if (clicked_element == service || clicked_element == service2){
+			default_service = !default_service;
+		}
+		if (clicked_element == night || clicked_element == night2){
+			default_night = !default_night;
+		}
+		if (clicked_element == online_control || clicked_element == online_control2){
+			default_online_control = !default_online_control;
+		}
+	}
 	
-	//$("#additional-block-security").prop("checked", true);
-	if (clicked_element == signaling || clicked_element == signaling2){
-		default_signality = !default_signality;
-	}
-	if (clicked_element == alarm_button || clicked_element == alarm_button2){
-		default_alarm_button = !default_alarm_button;
-	}
-	if (clicked_element == gas || clicked_element == gas2){
-		default_gas = !default_gas;
-	}
-	if (clicked_element == fire || clicked_element == fire2){
-		default_fire = !default_fire;
-	}
-	if (clicked_element == water || clicked_element == water2){
-		default_water = !default_water;
-	}
-	if (clicked_element == service || clicked_element == service2){
-		default_service = !default_service;
-	}
-	if (clicked_element == night || clicked_element == night2){
-		default_night = !default_night;
-	}
-	if (clicked_element == online_control || clicked_element == online_control2){
-		default_online_control = !default_online_control;
-	}
-	
-	
+        //прибавление к сумме отмеченных чекбоксов
 	if (default_signality == true){
 		price1_result += signaling_price1;
 		price2_result += signaling_price2;
 		$("#signaling").prop("checked", true);
-		$("#additional-block-security").prop("checked", true);
+		//$("#additional-block-security").prop("checked", true);
 	} else {
 		$("#signaling").prop("checked", false);
-		$("#additional-block-security").prop("checked", false);
+		//$("#additional-block-security").prop("checked", false);
 	}
 	if (default_alarm_button == true && default_signality == true){
 		price1_result += alarm_button_price1;
@@ -168,14 +217,18 @@ function calculate(clicked_element){
 		$("#online_control").prop("checked", false);
 	}
 	
+        //вывод резутатов стоимости услуг
+        //всё что ниже нужно, чтобы был пробел после тысячи
+        //price1_result_1000 - числитель от деления на тысячу стоимости услуг
+        //price1_result_1    - остаток от деления на тысячу стоимости услуг
 	if (price1_result > 999){
 		price1_result_1000 = Math.trunc(price1_result / 1000);
 		price1_result_1 = price1_result % 1000;
-		if (price1_result_1==0){
+		if (price1_result_1>=0 && price1_result_1<=9){
 			price_up.innerHTML = price1_result_1000+' 00'+price1_result_1+' P';
 			price_down1.innerHTML = price1_result_1000+' 00'+price1_result_1+' P';
 		} 
-		if (price1_result_1>0 && price1_result_1<=99){
+		if (price1_result_1>9 && price1_result_1<=99){
 			price_up.innerHTML = price1_result_1000+' 0'+price1_result_1+' P';
 			price_down1.innerHTML = price1_result_1000+' 0'+price1_result_1+' P';
 		}
@@ -187,10 +240,14 @@ function calculate(clicked_element){
 		price_up.innerHTML = price1_result+' P';
 		price_down1.innerHTML = price1_result+' P';
 	}
+        
+        //вывод резутатов стоимости обслуживания
+        //price2_result_1000 - числитель от деления на тысячу стоимости обслуживания
+        //price2_result_1    - остаток от деления на тысячу стоимости обслуживания
 	if (price2_result > 999){
 		price2_result_1000 = Math.trunc(price2_result / 1000);
 		price2_result_1 = price2_result % 1000;
-		if (price2_result_1==0){
+		if (price2_result_1>=0 && price2_result_1<=9){
 			price_down2.innerHTML = price2_result_1000+' 00'+price2_result_1+' P';	
 		}
 		if(price2_result_1>0 && price2_result_1<=99){
