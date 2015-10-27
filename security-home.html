@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+  	<meta charset="utf-8">
+  	<title>A-security</title>
+  	<link href="css/normalize.css" rel="stylesheet">
+  	<link href="css/style.css" rel="stylesheet">
+    <link href="owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+  	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="js/order_security_form.js"></script>
+    <script type="text/javascript" src="js/calculator_prices_home.js"></script>
+    <link rel="shortcut icon" href="img/favicon.jpg" type="image/jpg">
+  </head>
+  <body>
+
+      <a class="index-btn" href="index.html">На главную</a>
+
+       <header class="main-header">
+      <div class="mid-container clearfix">
+        <nav>
+          <ul class="main-navigation">
+            <li>
+              <a href="security-home.html">Для дома</a>
+
+              <ul class="sub-navigation">
+                <li>
+                  <a href="security-home.html">Дистанционная охрана домов</a>
+                </li>
+                <li>
+                  <a href="security-flat.html">Дистанционная охрана квартир</a>
+                </li>
+              </ul>
+
+            </li>
+            <li>
+              <a href="security-business.html">Для бизнеса</a>
+
+              <ul class="sub-navigation" style="left: -92px;">
+                <li>
+                  <a href="security-business.html">Дистанционная охрана бизнеса</a>
+                </li>
+                <li>
+                  <a href="security-physical.html">Физическа охрана объектов</a>
+                </li>
+              </ul>
+
+            </li>
+            <li>
+              <a href="security-personal.html">Прочие услуги</a>
+
+              <ul class="sub-navigation" style="    left: -82px;">
+                <li>
+                  <a href="security-personal.html">Личная охрана</a>
+                </li>
+                <li>
+                  <a href="security-mass.html">Охрана массовых мероприятий</a>
+                </li>
+                <li>
+                  <a href="security-detective.html">Детективные услуги</a>
+                </li>
+                <li>
+                  <a href="security-load.html">Сопровождение грузов</a>
+                </li>
+              </ul>
+
+            </li>
+            <li>
+              <a href="#">Технический сервис</a>
+            </li>
+            <li>
+              <a href="promo.html">О компании</a>
+            </li>
+            <li>
+              <a href="contacts.html">Контакты</a>
+            </li>
+            <li>
+              <a href="#">+7 (343) 288 78 56</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="main-header-btn">
+          <a href="#">Заказать звонок</a>
+        </div>
+      </div>  
+    </header>
+  
+    <!--<div class="security-home-banner">
+      
+    </div>-->
+    <form action="/echo" method="post">
+    <section class="security-home-service">
+      <div class="mid-container clearfix">
+        <div class="security-home-content">
+          <h1>Дистанционная охрана домов</h1>
+
+          <ul>
+            <li>
+              <input type="checkbox" name="signaling" id="signaling"  onchange="calculate(this)">
+              <label for="signaling">Охранная сигнализация</label>
+            </li>
+            <li>
+              <input type="checkbox" name="alarm-button" id="alarm-button"  onchange="calculate(this)">
+              <label for="alarm-button">Тревожная кнопка</label>
+            </li>
+          </ul>
+
+          <div class="security-home-content-price" id="security-home-content-price">17 790 Р</div>
+
+          <a class="security-home-content-btn" href="#">
+            Оборудование
+
+            <ul class="home-content-list">
+              <li>Панель управления</li>
+              <li>Клавиалура</li>
+              <li>Датчик движения, 3 шт</li>
+              <li>Датчик открывания двери</li>
+              <li>Брелок с тревожной кнопкой</li>
+            </ul>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="inner-page-promo mid-container">
+      <ul class="inner-page-promo-list">
+        <li>Среднее время прибытия от 3 минут</li>
+        <li>Профессиональный монтаж оборудования</li>
+        <li>Ваша безопасность в режиме 24/7 </li>
+        <li>SMS-уведомления о срабатывании системы</li>
+        <li>Техническая поддержка 24/7</li>
+      </ul>
+    </div>
+
+
+      <section class="security-home-main-content" style="background:url(img/security-home-bg-big.jpg); padding-bottom:40px;">
+        <div class="mid-container">
+          <h1>Дополнительные опции</h1>
+
+          <div class="service-slider-container">
+          <div id="owl-demo" class="owl-carousel owl-theme">
+            <div class="item">
+
+              <div class="service-slider-item">
+                <div class="service-slider-icon-4"></div>
+                <div class="slider-item-title"><input type="checkbox" name="сервисное обслуживание" id="service"  onchange="calculate(this)"><label for="service"><i class="slider-item-title-icon"></i>Сервисное обслуживание</label></div>
+                <span class="slider-item-description">Диагностика охранного комплекса, выявлеие
+                неполадок, и их устранение в режиме 24/7 </span>
+                <div class="slider-item-price">
+                  <span>Подключение: <i>Бесплатно</i></span>
+                  <span>Обслуживание: <i>Бесплатно</i></span>
+                </div>
+              </div>
+
+              <div class="service-slider-item">
+                <div class="service-slider-icon-1"></div>
+                <div class="slider-item-title">
+                  <input type="checkbox" name="Утечка газа" id="gas"  onchange="calculate(this)">
+                  <label for="gas"><i class="slider-item-title-icon"></i>Оповещение об утечке газа</label>
+                </div>
+                <span class="slider-item-description">Система своевременно уведомляет о наличии 
+                горючих газов или горючих паров в помещении.</span>
+                <div class="slider-item-price">
+                  <span>Подключение: <i>2 500 Р</i></span>
+                  <span>Обслуживание: <i>50 Р в месяц</i></span>
+                </div>
+              </div>
+
+              <div class="service-slider-item">
+                <div class="service-slider-icon-2"></div>
+                <div class="slider-item-title"><input type="checkbox" name="Затопление" id="water"  onchange="calculate(this)"><label for="water"><i class="slider-item-title-icon"></i>Оповещение о затоплении</label></div>
+                <span class="slider-item-description">Своевременное уведомление об угрозе затопления 
+                как с вашей стороны, так и вашего помещения извне.</span>
+                <div class="slider-item-price">
+                  <span>Подключение: <i>2 500 Р</i></span>
+                  <span>Обслуживание: <i>50 Р в месяц</i></span>
+                </div>
+              </div>
+
+              <div class="service-slider-item">
+                <div class="service-slider-icon-3"></div>
+                <div class="slider-item-title"><input type="checkbox" name="Возгорание" id="fire"  onchange="calculate(this)"><label for="fire"><i class="slider-item-title-icon"></i>Оповещение о возгорании</label></div>
+                <span class="slider-item-description">Система своевременно уведомляет об угрозе  
+                задымления и возникновения пожара.</span>
+                <div class="slider-item-price">
+                  <span>Подключение: <i>2 500 Р</i></span>
+                  <span>Обслуживание: <i>50 Р в месяц</i></span>
+                </div>
+              </div>
+
+            </div>
+            <div class="item">
+              <div class="service-slider-item">
+                <div class="service-slider-icon-5"></div>
+                <div class="slider-item-title"><input type="checkbox" name="ночной режим" id="night" onchange="calculate(this)"><label for="night"><i class="slider-item-title-icon"></i>Ночной режим</label></div>
+                <span class="slider-item-description">Позволяет поставить объект на охрану тогда, 
+                  когда вы находитесь внутри помещения</span>
+                <div class="slider-item-price">
+                  <span>Подключение: <i>2 500 Р</i></span>
+                  <span>Обслуживание: <i>50 Р в месяц</i></span>
+                </div>
+              </div>
+
+              <div class="service-slider-item">
+                <div class="service-slider-icon-6"></div>
+                <div class="slider-item-title"><input type="checkbox" name="онлайн контроль" id="online_control" onchange="calculate(this)"><label for="online_control"><i class="slider-item-title-icon"></i>Online контроль</label></div>
+                <span class="slider-item-description">Находясь в отъезде вы сможете 24 часа в сутки
+                быть в курсе происходящего  </span>
+                <div class="slider-item-price">
+                  <span>Подключение: <i>Бесплатно</i></span>
+                  <span>Обслуживание: <i>100 Р в месяц</i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      
+
+        <section class="scrt-home-price-block clearfix">
+          <div class="price-block-left"> 
+
+            <div class="price-block-title">Стоимость комплекта:</div>
+            <div class="price-block-price" id="price-block-price">17 790 Р</div>
+
+            <div class="price-block-title">Стоимость обслуживания:</div>
+            <div class="price-block-price" id="price-block-price-month">1 500 Р<span>в месяц</span></div>
+
+            <div class="shopping-list-title">Вы заказали</div>
+
+            <ul class="shopping-list">
+              <li>- Комплект охраны коттеджа</li>
+              <li>- Инстоляция оборудования</li>
+              <li>- Донолнительные опции</li>
+            </ul>
+
+          </div>
+          <div class="price-block-right">
+
+           <div class="price-block-title">Вы выбрали дополнительно:</div>
+
+           <ul class="price-block-additionally">
+             <li>
+               <input type="checkbox" name="additional-block-security" id="additional-block-security" onchange="calculate(this)">
+               <label for="additional-block-security">Охранная сигнализация</label>
+             </li>
+             <li>
+               <input type="checkbox" name="additional-block-alarm-button" id="additional-block-alarm-button" onchange="calculate(this)">
+               <label for="additional-block-alarm-button">Тревожная кнопка</label>
+             </li>
+             <li>
+               <input type="checkbox" name="additional-block-gas" id="additional-block-gas" onchange="calculate(this)">
+               <label for="additional-block-gas">Оповещение об утечке газа</label>
+             </li>
+             <li>
+               <input type="checkbox" name="additional-block-fire" id="additional-block-fire" onchange="calculate(this)">
+               <label for="additional-block-fire">Оповещение о возгарании</label>
+             </li>
+             <li>
+               <input type="checkbox" name="additional-block-water" id="additional-block-water" onchange="calculate(this)">
+               <label for="additional-block-water">Оповещение о затоплении</label>
+             </li>
+             <li>
+               <input type="checkbox" name="additional-block-service" id="additional-block-service" onchange="calculate(this)">
+               <label for="additional-block-service">Сервисное обслуживание</label>
+             </li>
+             <li>
+               <input type="checkbox" name="additional-block-night" id="additional-block-night" onchange="calculate(this)">
+               <label for="additional-block-night">Ночной режим</label>
+             </li>
+             <li>
+               <input type="checkbox" name="additional-block-online-control" id="additional-block-online-control" onchange="calculate(this)">
+               <label for="additional-block-online-control">Online контроль</label>
+             </li>
+           </ul>
+             
+            
+          </div>
+        </section>
+
+
+        <div style="width: 890px; margin: 0 auto; background: #fff; padding: 20px 0;">
+          <h2>Закажите online подключение</h2>
+
+          <div class="order-form" style="margin-bottom:0;">
+            <input type="text" name="name" id="order-person-name" placeholder="Ваше имя">
+            <input type="tel" name="telephone" id="order-person-tel" placeholder="Телефон">
+            <button type="button" onclick="OrderSecurity()">Заказать</button>
+          </div>
+        </div>
+      </section>
+      </form>
+
+
+
+
+   <div style="background:url(img/inner-page-form-bg.png) no-repeat; padding-top:1px;">
+    <div class="mid-container">
+      <h2 class="inner-page-form-title">Оставьте отзыв. Ваше мнение для нас важно.</h2>
+
+      <form class="inner-page-form" action="/echo" method="post">
+        <input type="text" name="name" placeholder="Ваше имя...">
+        <textarea rows="5"></textarea>
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+    </div>
+
+
+
+    
+
+
+
+  <footer class="second-footer clearfix">
+    <div class="mid-container">
+      <div class="s-footer-logo">
+        <p class="logo-caption">Комплексная система безопасности</p>
+      </div>
+      <div class="s-footer-text-area">
+        <div class="s-footer-area">
+          <p>Для бизнеса</p>
+          <a href="security-business.html">Дистанционная охрана бизнеса</a>
+          <a href="security-physical.html">Физическая охрана</a>
+        </div>
+        <div class="s-footer-area">
+          <p>Для дома</p>
+          <a href="security-flat.html">Дистанционная охрана квартир</a>
+          <a href="security-home.html">Дистанционная охрана домов</a>
+        </div>
+        <div class="s-footer-area">
+          <p>Прочие услуги</p>
+          <a href="security-personal.html">Личная охрана</a>
+          <a href="security-mass.html">Охрана массовых мероприятий</a>
+          <a href="security-detective.html">Детективные услуги</a>
+        </div>  
+        <div class="s-footer-contacts">
+          <ul>
+            <li><a href="#">Технический сервис</a></li>
+            <li><a href="promo.html">О компании</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="s-footer-callback-area">
+        <div class="s-footer-tel">+7 (343) 288-78-56</div>
+        <button class="s-footer-callback">Заказать звонок</button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-background"></div>
+
+    <div class="modal-content-window">
+      <form action="/echo" method="post">
+        <div class="modal-content-close"></div>
+        <div class="modal-content-title">Заказать<br> обратный звонок</div>
+        <p>
+          Введите ваше имя и телефон.<br>
+          Специалист компании ASecurity свяжется с Вами,<br>
+          чтобы ответить на Ваши вопросы.
+        </p>
+        <input type="text" name="Имя" placeholder="Имя">
+        <input type="tel" name="Телефон" placeholder="Телефон">
+        <button type="submit">Заказать</button>
+        <span>или перезвоните нам по телефону</span>
+        <span>+7 (343) 288-78-56</span>
+      </form>
+    </div>
+
+
+    <script>
+      var header_button = document.querySelector(".main-header-btn");
+      var footer_button = document.querySelector(".s-footer-callback");
+      var modal_window = document.querySelector(".modal-content-window");
+      var modal_background = document.querySelector(".modal-background");
+      var modal_content_close = modal_window.querySelector(".modal-content-close");
+
+      header_button.addEventListener("click", function(modal){
+        modal.preventDefault();
+        modal_window.classList.add("modal-content-show");
+        modal_background.classList.add("modal-content-show")
+      });
+
+
+      footer_button.addEventListener("click", function(modal){
+        modal.preventDefault();
+        modal_window.classList.add("modal-content-show");
+        modal_background.classList.add("modal-content-show")
+      });
+
+
+      modal_background.addEventListener("click", function(modal){
+        modal.preventDefault();
+        modal_window.classList.remove("modal-content-show");
+        modal_background.classList.remove("modal-content-show")
+      });
+
+
+      modal_content_close.addEventListener("click", function(modal){
+        modal.preventDefault();
+        modal_window.classList.remove("modal-content-show");
+        modal_background.classList.remove("modal-content-show")
+      });
+
+
+    </script>  
+    
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="owl-carousel/owl.carousel.js"></script>
+    <script src="owl-carousel/carousel.js"></script>
+    <script>
+        $(document).ready(function() {
+ 
+  $("#owl-demo").owlCarousel({
+ 
+      //navigation : true, // Show next and prev buttons
+      paginationSpeed : 400,
+      singleItem:true,
+      autoPlay:-10000000000000000000000
+ 
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+ 
+  });
+ 
+});
+    </script>  
+    <script>
+      var button = document.querySelector(".security-home-content-btn");
+      var button_list = button.querySelector(".home-content-list"); 
+
+      button.addEventListener("click", function(event){
+        event.preventDefault();
+        button_list.classList.toggle("show");
+      });
+
+
+
+    </script>
+
+
+   
+
+  </body>
+
+</html>
