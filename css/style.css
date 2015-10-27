@@ -2,6 +2,7 @@ body {
 	min-width:1210px;
 	font-family:"Roboto", "Arial", sans-serif;
 	color:#000;
+
 }
 
 
@@ -205,6 +206,8 @@ h2{
 	background:url("../img/index-bg.png") no-repeat;
 	text-align: center;
 	padding: 22px 0 35px 0;
+	overflow:hidden;
+	position:relative;
 }
 
 
@@ -2492,3 +2495,64 @@ margin: 10px auto 0;
 	left: 0;
 	z-index: -1;
 }
+
+
+
+
+.satellite{
+	width:39px;
+	height:27px;
+
+	position:absolute;
+	top:50%;
+	left:0;
+
+	background:url("../img/satellite.png") no-repeat;
+
+	animation:satellite-move;
+	animation-duration:25s;
+	animation-iteration-count:infinite;
+}
+
+
+@keyframes satellite-move{
+	from {
+		transform:translate(-100px, 0);
+	}
+
+  to {
+  	transform:translate(2500px, -200px);
+  }
+}
+
+
+.satellite::after{
+	content:"";
+
+	width:12px;
+	height:10px;
+
+	display:block;
+
+	position:absolute;
+	top:17px;
+	left:8px;
+
+	background:url("../img/satellite-light.png") no-repeat;
+
+	opacity:0;
+
+	animation:satellite-light;
+	animation-duration:2s;
+	animation-timing-function:ease-in-out;
+	animation-iteration-count:infinite;
+}
+
+
+@keyframes satellite-light{
+	to {
+		opacity:1;
+	}
+}
+
+
