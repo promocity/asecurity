@@ -2742,27 +2742,49 @@ h2{
 
 
 
-/*.modal-content-window-2{
-	width:230px;
-	height:164px;
-	margin-top:-82px;
-	margin-left:-115px;
+.modal-content-window-2{
+	width:630px;
+	height:564px;
+	margin-top:-282px;
+	margin-left:-315px;
 
-	position:absolute;
+	text-align:center;
+
+	position:fixed;
 	top:50%;
 	left:50%;
 
 	background:#e8e8e8;
+
+	border-radius:15px;
+	border:2px solid #88888a;
+
+	animation:modal-window-2 6s;
+
+	opacity:0;
+}
+
+
+@keyframes modal-window-2{
+	0%, 100% {
+		opacity:0;
+	}
+
+	50% {
+		opacity:1;
+	}
 }
 
 
 .modal-content-window-2 p:nth-child(1){
-	font-size:14px;
+	margin-top:30%;
+	font-size:35px;
 	color:#01063c;
+	font-weight:700;
 }
 
 
 .modal-content-window-2 p:nth-child(2){
-	font-size:12px;
+	font-size:33px;
 	color:#88888a;
-}*/
+}
