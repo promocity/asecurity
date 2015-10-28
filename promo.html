@@ -129,6 +129,7 @@
 
       <div class="promo-small-block-1 wow">
         <div class="mid-container clearfix">
+        <div class="promo-block-bg-1"></div>
           <img src="img/small-block-image-1.png" width="291" height="293" alt="">
           <div class="small-block-text">
             <div class="small-block-title">Более 30 экипажей</div>
@@ -145,6 +146,7 @@
 
       <div class="promo-small-block-2 wow">
         <div class="mid-container clearfix">
+          <div class="promo-block-bg-2"></div>
           <div class="small-block-text">
             <div class="small-block-title">Мониторинговый центр</div>
             <p>
@@ -162,14 +164,11 @@
 
     <div class="promo-small-block-3 wow">
       <div class="mid-container clearfix">
+        <div class="promo-block-bg-1"></div>
         <img src="img/small-block-image-3.png" width="218" height="254" alt="">
         <div class="small-block-text">
           <div class="small-block-title">Комната хранения оружия</div>
           <p>
-            Наши экипажи расположены по всей территории
-            Екатеринбурга, с учётом особенностей районов.
-            Это обеспечивает возможность быстрого 
-            реагированияи прибытия экипажей от 3 минут
           </p>
         </div>
       </div>  
@@ -178,6 +177,7 @@
 
     <div class="promo-small-block-4 wow">
       <div class="mid-container clearfix">
+        <div class="promo-block-bg-2"></div>
         <div class="small-block-text">
           <div class="small-block-title">Технический сервис</div>
           <p>
@@ -195,6 +195,7 @@
 
     <div class="promo-small-block-5 wow">
       <div class="mid-container clearfix">
+        <div class="promo-block-bg-1"></div>
         <img src="img/small-block-image-5.png" width="314" height="188" alt="">
         <div class="small-block-text">
           <div class="small-block-title">Физическая охрана объектов</div>
@@ -250,7 +251,7 @@
 
   <div class="modal-background"></div>
 
-    <div class="modal-content-window">
+        <div class="modal-content-window">
       <form action="/echo" method="post">
         <div class="modal-content-close"></div>
         <div class="modal-content-title">Заказать<br> обратный звонок</div>
@@ -259,9 +260,9 @@
           Специалист компании ASecurity свяжется с Вами,<br>
           чтобы ответить на Ваши вопросы.
         </p>
-        <input type="text" name="Имя" id="call_name" placeholder="Имя">
-        <input type="tel" name="Телефон" id="call_tel" placeholder="Телефон">
-        <button type="button" onclick="Callme()">Заказать</button>
+        <input type="text" name="Имя" id="modal_call_name" placeholder="Имя">
+        <input type="tel" name="Телефон" id="modal_call_tel" placeholder="Телефон">
+        <button type="button" onclick="Modal_Callme()">Заказать</button>
         <span>или перезвоните нам по телефону</span>
         <span>+7 (343) 288-78-56</span>
       </form>

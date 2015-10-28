@@ -104,20 +104,20 @@
           <img class="small-banner-img small-banner-img-1" src="img/index-small-banner-1-active.png" width="345" height="200" alt="">
         </a>
       
-        <div class="flip-container banner-logo" ontouchstart="this.classList.toggle('hover');">     
+        <!--<div class="flip-container banner-logo" ontouchstart="this.classList.toggle('hover');">     
           <div class="flipper">
-            <div class="front">
+            <div class="front">-->
               <a class="index-logo-banner" href="javascript:void(0);">
                 <img src="img/index-logo-banner.png" width="136" height="158" alt="">
               </a>
-            </div>
+            <!--</div>
             <div class="back">
               <a class="index-logo-banner" href="javascript:void(0);">
                 <img src="img/index-logo-banner.png" width="136" height="158" alt="">
               </a>
             </div>
           </div>
-        </div>
+        </div>-->
 
         <a class="index-small-banner" href="security-physical.html">
           <img src="img/index-small-banner-2.png" width="170" height="194" alt="">
@@ -225,7 +225,7 @@
 
       <div class="modal-background"></div>
 
-    <div class="modal-content-window">
+        <div class="modal-content-window">
       <form action="/echo" method="post">
         <div class="modal-content-close"></div>
         <div class="modal-content-title">Заказать<br> обратный звонок</div>
@@ -234,9 +234,9 @@
           Специалист компании ASecurity свяжется с Вами,<br>
           чтобы ответить на Ваши вопросы.
         </p>
-        <input type="text" name="Имя" id="call_name" placeholder="Имя">
-        <input type="tel" name="Телефон" id="call_tel" placeholder="Телефон">
-        <button type="button" onclick="Callme()">Заказать</button>
+        <input type="text" name="Имя" id="modal_call_name" placeholder="Имя">
+        <input type="tel" name="Телефон" id="modal_call_tel" placeholder="Телефон">
+        <button type="button" onclick="Modal_Callme()">Заказать</button>
         <span>или перезвоните нам по телефону</span>
         <span>+7 (343) 288-78-56</span>
       </form>
@@ -279,6 +279,18 @@
         modal_background.classList.remove("modal-content-show")
       });
 
+
+      var index_logo = document.querySelector(".index-logo-banner");
+      var index_logo_img = document.querySelector(".index-logo-banner img");
+
+
+      index_logo.addEventListener("mouseover", function(event){
+        index_logo_img.style.cssText="animation:logo-flip 1s;"
+      });
+
+      index_logo.addEventListener("mouseout", function(event){
+        index_logo_img.style.cssText="animation:none;"
+      });
 
     </script>  
 

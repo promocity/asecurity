@@ -1,12 +1,15 @@
 <?php
-	/*	escape_chars	î÷èùàåò ñòðîêó îò èíúåêöèé êîäà
-	 *  getbool			ïîëó÷àåò èç ñòðîêè áóëåâóþ
-	 *  
+	/*	escape_chars	Ð¾Ñ‡Ð¸Ñ‰Ð°ÐµÑ‚ ÑÑ‚Ñ€Ð¾ÐºÑƒ Ð¾Ñ‚ Ð¸Ð½ÑŠÐµÐºÑ†Ð¸Ð¹ ÐºÐ¾Ð´Ð°
+	 *  getbool			Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÐµÑ‚ Ð¸Ð· ÑÑ‚Ñ€Ð¾ÐºÐ¸ Ð±ÑƒÐ»ÐµÐ²ÑƒÑŽ
+	 *  checknumber		Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑÐµÑ‚ Ð½Ð¾Ð¼ÐµÑ€ Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½Ð°
 	 * */
+
 	header('Content-Type: text/html; charset=UTF-8', true);
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/plain; charset=UTF-8' . "\r\n";
 	$headers .= 'From: Asecurity' . "\r\n";
+
+	//Ð¾Ñ‡Ð¸Ñ‰Ð°ÐµÑ‚ ÑÑ‚Ñ€Ð¾ÐºÑƒ Ð¾Ñ‚ Ð¸Ð½ÑŠÐµÐºÑ†Ð¸Ð¹ ÐºÐ¾Ð´Ð°
 	function escape_chars($strinput){
 		if(is_array($strinput))
 			return "";
@@ -15,10 +18,12 @@
 			return htmlspecialchars(trim($strinput));
 		}
 	}
+	//Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÐµÑ‚ Ð¸Ð· ÑÑ‚Ñ€Ð¾ÐºÐ¸ Ð±ÑƒÐ»ÐµÐ²ÑƒÑŽ
 	function getbool($boolstr){
 		$boolstr = filter_var($boolstr, FILTER_VALIDATE_BOOLEAN);
 		return $boolstr;
 	}
+	//Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑÐµÑ‚ Ð½Ð¾Ð¼ÐµÑ€ Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½Ð°
 	function checknumber($num){
 		$arrayreplace = array("-","(",")"," ");
 		$num = str_replace($arrayreplace,"",$num);
@@ -28,54 +33,56 @@
 		return $result;
 	}
 	
+	//Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÐµÐ¼Ð¾Ðµ Ð¸Ð· Ñ„Ð¾Ñ€Ð¼Ñ‹
 	$action = escape_chars($_POST['action']);
+	//ÐµÐ¼ÐµÐ¹Ð»
 	$email = 'packeger@yandex.ru';
+	//info@rfsecurity.ru
 	
 	
-	//Îòçûâ
-	if ($action == 'Feedback'){
-		$feedback_name = iconv("utf-8", "windows-1251",escape_chars($_POST['feedback_name']));
-		$feedback_text = iconv("utf-8", "windows-1251",escape_chars($_POST['feedback_text']));
+	if ($action == 'Feedback'){		//ÐžÑ‚Ð·Ñ‹Ð²
+		$feedback_name = escape_chars($_POST['feedback_name']);
+		$feedback_text = escape_chars($_POST['feedback_text']);
 		if ($feedback_name == '') {
-			$errormessage = 'Ïîæàëóéñòà, óêàæèòå Âàøå èìÿ.';
+			$errormessage = 'ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, ÑƒÐºÐ°Ð¶Ð¸Ñ‚Ðµ Ð’Ð°ÑˆÐµ Ð¸Ð¼Ñ.';
 		} else {
 			if ($feedback_text == ''){
-				$errormessage = 'Ïîæàëóéñòà, íàïèøèòå òåêñò îòçûâà.';
+				$errormessage = 'ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, Ð½Ð°Ð¿Ð¸ÑˆÐ¸Ñ‚Ðµ Ñ‚ÐµÐºÑÑ‚ Ð¾Ñ‚Ð·Ñ‹Ð²Ð°.';
 			}
 		}
 		if ($feedback_name != '' && $feedback_text != ''){
-			$mail_message = "Îòçûâ îò ".$feedback_name.":\n".$feedback_text;
-			mail($email, 'Îòçûâ', iconv("windows-1251", "utf-8" ,$mail_message),$headers);
-			$errormessage = "Îòçûâ óñïåøíî îòïðàâëåí.";
+			$mail_message = "ÐžÑ‚Ð·Ñ‹Ð² Ð¾Ñ‚ ".$feedback_name.":\n".$feedback_text;
+			mail($email, 'ÐžÑ‚Ð·Ñ‹Ð²', $mail_message,$headers);
+			$errormessage = "ÐžÑ‚Ð·Ñ‹Ð² ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½.";
 		}
-	} else if ($action == 'Question'){	//Îòïðàâêà âîïðîñà
-		$contact_name = iconv("utf-8", "windows-1251",escape_chars($_POST['contact_name']));
+	} else if ($action == 'Question'){	//ÐžÑ‚Ð¿Ñ€Ð°Ð²ÐºÐ° Ð²Ð¾Ð¿Ñ€Ð¾ÑÐ°
+		$contact_name = escape_chars($_POST['contact_name']);
 		$contact_tel = escape_chars($_POST['contact_tel']);
-		$contact_text = iconv("utf-8", "windows-1251",escape_chars($_POST['contact_text']));
+		$contact_text = escape_chars($_POST['contact_text']);
 		if ($contact_name == '') {
-			$errormessage = 'Ïîæàëóéñòà, óêàæèòå Âàøå èìÿ.';
+			$errormessage = 'ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, ÑƒÐºÐ°Ð¶Ð¸Ñ‚Ðµ Ð’Ð°ÑˆÐµ Ð¸Ð¼Ñ.';
 		} else {
 			if ($contact_tel == '' || checknumber($contact_tel)==0){
-				$errormessage = 'Ïîæàëóéñòà, óêàæèòå íîìåð òåëåôîíà.';
+				$errormessage = 'ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, ÑƒÐºÐ°Ð¶Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½Ð°.';
 			} else {
 				if ($contact_text == ''){
-					$errormessage = 'Ïîæàëóéñòà, íàïèøèòå òåêñò âîïðîñà.';
+					$errormessage = 'ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, Ð½Ð°Ð¿Ð¸ÑˆÐ¸Ñ‚Ðµ Ñ‚ÐµÐºÑÑ‚ Ð²Ð¾Ð¿Ñ€Ð¾ÑÐ°.';
 				}
 			}
 			if ($contact_name != '' && $contact_tel != '' && $contact_text != '' && checknumber($contact_tel)==1){
-				$mail_message = 'Âîïðîñ îò '.$contact_name.' (Êîíòàêíûé íîìåð: '.$contact_tel.") ñëåäóþùåãî ñîäåðæàíèÿ:\n".$contact_text;
-				mail($email, 'Âîïðîñ', iconv("windows-1251", "utf-8" ,$mail_message),$headers);
-				$errormessage = "Âîïðîñ óñïåøíî îòïðàâëåí.";
+				$mail_message = 'Ð’Ð¾Ð¿Ñ€Ð¾Ñ Ð¾Ñ‚ '.$contact_name.' (ÐšÐ¾Ð½Ñ‚Ð°ÐºÐ½Ñ‹Ð¹ Ð½Ð¾Ð¼ÐµÑ€: '.$contact_tel.") ÑÐ»ÐµÐ´ÑƒÑŽÑ‰ÐµÐ³Ð¾ ÑÐ¾Ð´ÐµÑ€Ð¶Ð°Ð½Ð¸Ñ:\n".$contact_text;
+				mail($email, 'Ð’Ð¾Ð¿Ñ€Ð¾Ñ', $mail_message,$headers);
+				$errormessage = "Ð’Ð¾Ð¿Ñ€Ð¾Ñ ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½.";
 			}
 		}
-	}else if ($action == 'InstallRequest'){ //çàÿâêà íà ïîäêëþ÷åíèå
-		$order_person_name = iconv("utf-8", "windows-1251",escape_chars($_POST['order_person_name']));
+	}else if ($action == 'InstallRequest'){ //Ð·Ð°ÑÐ²ÐºÐ° Ð½Ð° Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ
+		$order_person_name = escape_chars($_POST['order_person_name']);
 		$order_person_tel = escape_chars($_POST['order_person_tel']);
 		if ($order_person_name == '') {
-			$errormessage = 'Ïîæàëóéñòà, óêàæèòå Âàøå èìÿ.';
+			$errormessage = 'ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, ÑƒÐºÐ°Ð¶Ð¸Ñ‚Ðµ Ð’Ð°ÑˆÐµ Ð¸Ð¼Ñ.';
 		} else {
 			if ($order_person_tel == '' || checknumber($order_person_tel)==0){
-				$errormessage = 'Ïîæàëóéñòà, óêàæèòå íîìåð òåëåôîíà.';
+				$errormessage = 'ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, ÑƒÐºÐ°Ð¶Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½Ð°.';
 			}
 		}
 		if ($order_person_name != '' && $order_person_tel != '' && checknumber($order_person_tel)==1){
@@ -91,43 +98,43 @@
 			$price = escape_chars($_POST['price']);
 			$price_month = escape_chars($_POST['price_month']);
 		
-			//ôîðìèðîâàíèå ñîîáùåíèÿ íà ïî÷òó
-			$mail_message = 'Ïîñòóïèëà çàÿâêà îò '.$order_person_name.' (Êîíòàêòíûé òåëåôîí: '.$order_person_tel.') íà ñëåäóþùèå óñëóãè ñòîèìîñòüþ '.$price.': '."\n";
+			//Ñ„Ð¾Ñ€Ð¼Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ñ Ð½Ð° Ð¿Ð¾Ñ‡Ñ‚Ñƒ
+			$mail_message = 'ÐŸÐ¾ÑÑ‚ÑƒÐ¿Ð¸Ð»Ð° Ð·Ð°ÑÐ²ÐºÐ° Ð¾Ñ‚ '.$order_person_name.' (ÐšÐ¾Ð½Ñ‚Ð°ÐºÑ‚Ð½Ñ‹Ð¹ Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½: '.$order_person_tel.') Ð½Ð° ÑÐ»ÐµÐ´ÑƒÑŽÑ‰Ð¸Ðµ ÑƒÑÐ»ÑƒÐ³Ð¸ ÑÑ‚Ð¾Ð¸Ð¼Ð¾ÑÑ‚ÑŒÑŽ '.$price.': '."\n";
 			if ($signaling == true)
-				$mail_message .= "Ñèãíàëèçàöèÿ\n";
+				$mail_message .= "Ð¡Ð¸Ð³Ð½Ð°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ñ\n";
 			if ($alarm_button == true)
-				$mail_message .= "Òðåâîæíàÿ êíîïêà\n";
+				$mail_message .= "Ð¢Ñ€ÐµÐ²Ð¾Ð¶Ð½Ð°Ñ ÐºÐ½Ð¾Ð¿ÐºÐ°\n";
 			if ($gas == true)
-				$mail_message .= "Îïîâåùåíèå îá óòå÷êå ãàçà\n";
+				$mail_message .= "ÐžÐ¿Ð¾Ð²ÐµÑ‰ÐµÐ½Ð¸Ðµ Ð¾Ð± ÑƒÑ‚ÐµÑ‡ÐºÐµ Ð³Ð°Ð·Ð°\n";
 			if ($fire == true)
-				$mail_message .= "Îïîâåùåíèå î âîçãîðàíèè\n";
+				$mail_message .= "ÐžÐ¿Ð¾Ð²ÐµÑ‰ÐµÐ½Ð¸Ðµ Ð¾ Ð²Ð¾Ð·Ð³Ð¾Ñ€Ð°Ð½Ð¸Ð¸\n";
 			if ($water == true)
-				$mail_message .= "Îïîâåùåíèå î çàòîïëåíèè\n";
+				$mail_message .= "ÐžÐ¿Ð¾Ð²ÐµÑ‰ÐµÐ½Ð¸Ðµ Ð¾ Ð·Ð°Ñ‚Ð¾Ð¿Ð»ÐµÐ½Ð¸Ð¸\n";
 			if ($service == true)
-				$mail_message .= "Ñåðâèñíîå îáñëóæèâàíèå\n";
+				$mail_message .= "Ð¡ÐµÑ€Ð²Ð¸ÑÐ½Ð¾Ðµ Ð¾Ð±ÑÐ»ÑƒÐ¶Ð¸Ð²Ð°Ð½Ð¸Ðµ\n";
 			if ($night == true)
-				$mail_message .= "Íî÷íîé ðåæèì\n";
+				$mail_message .= "ÐÐ¾Ñ‡Ð½Ð¾Ð¹ Ñ€ÐµÐ¶Ð¸Ð¼\n";
 			if ($online_control == true)
-				$mail_message .= "Îíëàéí êîíòðîëü\n";
+				$mail_message .= "ÐžÐ½Ð»Ð°Ð¹Ð½ ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð»ÑŒ\n";
 
-			mail($email, 'Çàÿâêà îíëàéí ïîäêëþ÷åíèÿ', iconv("windows-1251", "utf-8" ,$mail_message),$headers);
-			$errormessage = "Çàÿâêà óñïåøíî îòïðàâëåíà.";
+			mail($email, 'Ð—Ð°ÑÐ²ÐºÐ° Ð¾Ð½Ð»Ð°Ð¹Ð½ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ñ', $mail_message,$headers);
+			$errormessage = "Ð—Ð°ÑÐ²ÐºÐ° ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð°.";
 		}
-	} else if($action == 'Callme'){ //çàêàçàòü çâîíîê
-		$call_name = iconv("utf-8", "windows-1251",escape_chars($_POST['call_name']));
+	} else if($action == 'Callme'){ //Ð·Ð°ÐºÐ°Ð·Ð°Ñ‚ÑŒ Ð·Ð²Ð¾Ð½Ð¾Ðº
+		$call_name = escape_chars($_POST['call_name']);
 		$call_tel = escape_chars($_POST['call_tel']);
 		if ($call_name == '') {
-			$errormessage = 'Ïîæàëóéñòà, óêàæèòå Âàøå èìÿ.';
+			$errormessage = 'ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, ÑƒÐºÐ°Ð¶Ð¸Ñ‚Ðµ Ð’Ð°ÑˆÐµ Ð¸Ð¼Ñ.';
 		} else {
 			if ($call_tel == '' || checknumber($call_tel)==0){
-				$errormessage = 'Ïîæàëóéñòà, óêàæèòå íîìåð òåëåôîíà.';
+				$errormessage = 'ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð°, ÑƒÐºÐ°Ð¶Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½Ð°.';
 			}
 		}
 		if ($call_name != '' && $call_tel != ''  && checknumber($call_tel)==1){
-			$mail_message = "Ïðîñèò ïîçâîíèòü ".$call_name." ïî íîìåðó ".$call_tel;
-			mail($email, 'Çàÿâêà íà çâîíîê', iconv("windows-1251", "utf-8" ,$mail_message),$headers);
-			$errormessage = "Çàÿâêà óñïåøíî îòïðàâëåíà.";
+			$mail_message = "ÐŸÑ€Ð¾ÑÐ¸Ñ‚ Ð¿Ð¾Ð·Ð²Ð¾Ð½Ð¸Ñ‚ÑŒ ".$call_name." Ð¿Ð¾ Ð½Ð¾Ð¼ÐµÑ€Ñƒ ".$call_tel;
+			mail($email, 'Ð—Ð°ÑÐ²ÐºÐ° Ð½Ð° Ð·Ð²Ð¾Ð½Ð¾Ðº', $mail_message,$headers);
+			$errormessage = "Ð—Ð°ÑÐ²ÐºÐ° ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð°.";
 		}
 	}
-	echo iconv("windows-1251", "utf-8",$errormessage);
+	echo $errormessage;
 ?>
