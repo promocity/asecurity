@@ -3,7 +3,10 @@
 	 *  getbool			получает из строки булевую
 	 *  
 	 * */
-
+	header('Content-Type: text/html; charset=UTF-8', true);
+	$headers  = 'MIME-Version: 1.0' . "\r\n";
+	$headers .= 'Content-type: text/plain; charset=UTF-8' . "\r\n";
+	$headers .= 'From: Asecurity' . "\r\n";
 	function escape_chars($strinput){
 		if(is_array($strinput))
 			return "";
@@ -16,58 +19,66 @@
 		$boolstr = filter_var($boolstr, FILTER_VALIDATE_BOOLEAN);
 		return $boolstr;
 	}
+	function checknumber($num){
+		$arrayreplace = array("-","(",")"," ");
+		$num = str_replace($arrayreplace,"",$num);
+		$result = preg_match('/^(\+?\d+)?\s*(\(\d+\))?[\s-]*([\d-]*)$/', $num, $res);
+		if ($num == '')
+			$result = 0;
+		return $result;
+	}
 	
 	$action = escape_chars($_POST['action']);
 	$email = 'packeger@yandex.ru';
 	
 	
-	//Обзор
+	//Отзыв
 	if ($action == 'Feedback'){
-		$feedback_name = escape_chars($_POST['feedback_name']);
-		$feedback_text = escape_chars($_POST['feedback_text']);
+		$feedback_name = iconv("utf-8", "windows-1251",escape_chars($_POST['feedback_name']));
+		$feedback_text = iconv("utf-8", "windows-1251",escape_chars($_POST['feedback_text']));
 		if ($feedback_name == '') {
 			$errormessage = 'Пожалуйста, укажите Ваше имя.';
 		} else {
 			if ($feedback_text == ''){
-				$errormessage = 'Пожалуйста, напишите текст обзора.';
+				$errormessage = 'Пожалуйста, напишите текст отзыва.';
 			}
 		}
 		if ($feedback_name != '' && $feedback_text != ''){
-			$mail_message = "Обзор от ".$feedback_name.":\n".$feedback_text;
-			mail($email, 'Обзор от '.$feedback_name, $mail_message);
-			$errormessage = "Обзор успешно отправлен.";
+			$mail_message = "Отзыв от ".$feedback_name.":\n".$feedback_text;
+			mail($email, 'Отзыв', iconv("windows-1251", "utf-8" ,$mail_message),$headers);
+			$errormessage = "Отзыв успешно отправлен.";
 		}
 	} else if ($action == 'Question'){	//Отправка вопроса
-		$contact_name = escape_chars($_POST['contact_name']);
+		$contact_name = iconv("utf-8", "windows-1251",escape_chars($_POST['contact_name']));
 		$contact_tel = escape_chars($_POST['contact_tel']);
-		$contact_text = escape_chars($_POST['contact_text']);
+		$contact_text = iconv("utf-8", "windows-1251",escape_chars($_POST['contact_text']));
 		if ($contact_name == '') {
 			$errormessage = 'Пожалуйста, укажите Ваше имя.';
 		} else {
-			if ($contact_tel == ''){
+			if ($contact_tel == '' || checknumber($contact_tel)==0){
 				$errormessage = 'Пожалуйста, укажите номер телефона.';
 			} else {
 				if ($contact_text == ''){
 					$errormessage = 'Пожалуйста, напишите текст вопроса.';
 				}
 			}
-			if ($contact_name != '' && $contact_tel != '' && $contact_text != ''){
-				$mail_message = 'Вопрос от '.$contact_name.' (Контакный номер: '.$contact_tel."):\n".$contact_text;
-				mail($email, 'Вопрос от '.$contact_name, $mail_message);
+			if ($contact_name != '' && $contact_tel != '' && $contact_text != '' && checknumber($contact_tel)==1){
+				$mail_message = 'Вопрос от '.$contact_name.' (Контакный номер: '.$contact_tel.") следующего содержания:\n".$contact_text;
+				mail($email, 'Вопрос', iconv("windows-1251", "utf-8" ,$mail_message),$headers);
 				$errormessage = "Вопрос успешно отправлен.";
 			}
 		}
 	}else if ($action == 'InstallRequest'){ //заявка на подключение
-		$order_person_name = escape_chars($_POST['order_person_name']);
+		$order_person_name = iconv("utf-8", "windows-1251",escape_chars($_POST['order_person_name']));
 		$order_person_tel = escape_chars($_POST['order_person_tel']);
 		if ($order_person_name == '') {
 			$errormessage = 'Пожалуйста, укажите Ваше имя.';
 		} else {
-			if ($order_person_tel == ''){
+			if ($order_person_tel == '' || checknumber($order_person_tel)==0){
 				$errormessage = 'Пожалуйста, укажите номер телефона.';
 			}
 		}
-		if ($order_person_name != '' && $order_person_tel != ''){
+		if ($order_person_name != '' && $order_person_tel != '' && checknumber($order_person_tel)==1){
 			$signaling = getbool($_POST['signaling']);
 			$alarm_button = getbool($_POST['alarm_button']);
 			$gas = getbool($_POST['gas']);
@@ -99,44 +110,24 @@
 			if ($online_control == true)
 				$mail_message .= "Онлайн контроль\n";
 
-				mail($email, 'Заявка онлайн подключения', $mail_message);
-				$errormessage = "Заявка успешно отправлена.";
+			mail($email, 'Заявка онлайн подключения', iconv("windows-1251", "utf-8" ,$mail_message),$headers);
+			$errormessage = "Заявка успешно отправлена.";
 		}
-	if ($action == 'Callme'){ //заказать звонок
-		$call_name = escape_chars($_POST['call_name']);
+	} else if($action == 'Callme'){ //заказать звонок
+		$call_name = iconv("utf-8", "windows-1251",escape_chars($_POST['call_name']));
 		$call_tel = escape_chars($_POST['call_tel']);
 		if ($call_name == '') {
 			$errormessage = 'Пожалуйста, укажите Ваше имя.';
 		} else {
-			if ($call_tel == ''){
+			if ($call_tel == '' || checknumber($call_tel)==0){
 				$errormessage = 'Пожалуйста, укажите номер телефона.';
 			}
 		}
-		if ($call_name != '' && $call_tel != ''){
+		if ($call_name != '' && $call_tel != ''  && checknumber($call_tel)==1){
 			$mail_message = "Просит позвонить ".$call_name." по номеру ".$call_tel;
-			mail($email, 'Заявка на звонок от '.$call_name, $mail_message);
+			mail($email, 'Заявка на звонок', iconv("windows-1251", "utf-8" ,$mail_message),$headers);
 			$errormessage = "Заявка успешно отправлена.";
 		}
-	} else if ($action == 'Question'){	//Отправка вопроса
-		$contact_name = escape_chars($_POST['contact_name']);
-		$contact_tel = escape_chars($_POST['contact_tel']);
-		$contact_text = escape_chars($_POST['contact_text']);
-		if ($contact_name == '') {
-			$errormessage = 'Пожалуйста, укажите Ваше имя.';
-		} else {
-			if ($contact_tel == ''){
-				$errormessage = 'Пожалуйста, укажите номер телефона.';
-			} else {
-				if ($contact_text == ''){
-					$errormessage = 'Пожалуйста, напишите текст вопроса.';
-				}
-			}
-			if ($contact_name != '' && $contact_tel != '' && $contact_text != ''){
-				$mail_message = 'Вопрос от '.$contact_name.' (Контакный номер: '.$contact_tel."):\n".$contact_text;
-				mail($email, 'Вопрос от '.$contact_name, $mail_message);
-				$errormessage = "Вопрос успешно отправлен.";
-			}
-		}
 	}
-	echo $errormessage;
+	echo iconv("windows-1251", "utf-8",$errormessage);
 ?>

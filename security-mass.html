@@ -103,7 +103,7 @@
 
     
 
-        <div class="security-mass-container" style="background:url(img/container-mass-bg.jpg) no-repeat;  height:434px; padding-top:1px;">
+        <div class="security-mass-container" style="background:url(img/container-load-bg.jpg) no-repeat;  height:434px; padding-top:1px;">
         <div class="mid-container">
           <div style="font-size:24px; text-align:center; margin-top:62px;">
             Подробную информацию об услуге<br> вы можете получить у наших менеджеров
@@ -111,9 +111,9 @@
           <h2 style="font-size:25px;">Закажите звонок</h2>
 
           <div class="order-form" style="margin-bottom:0;">
-            <input type="text" name="name" placeholder="Ваше имя">
-            <input type="tel" name="telephone" placeholder="Телефон">
-            <button type="submit">Заказать</button>
+      <input type="text" name="name" id="call_name" placeholder="Имя">
+      <input type="tel" name="telephone" id="call_tel" placeholder="Телефон">
+      <button type="button" onclick="Callme()">Заказать</button>
           </div>
         </div>
 
@@ -127,9 +127,9 @@
       <h2 class="inner-page-form-title">Оставьте отзыв. Ваше мнение для нас важно.</h2>
 
       <form class="inner-page-form" action="/echo" method="post">
-        <input type="text" name="name" placeholder="Ваше имя...">
-        <textarea rows="5"></textarea>
-        <button type="submit">Отправить</button>
+        <input type="text" name="name" id="feedback_name" placeholder="Ваше имя...">
+        <textarea rows="5" id="feedback_text"></textarea>
+        <button type="button" onclick="FeedbackSend()">Отправить</button>
       </form>
     </div>
     </div>
@@ -236,6 +236,7 @@
     
 
     <script src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/ajax_forms.js"></script>
     <script src="owl-carousel/owl.carousel.js"></script>
     <script src="owl-carousel/carousel.js"></script>
     <script>
@@ -259,15 +260,6 @@
  
 });
     </script>  
-    <script>
-      var button = document.querySelector(".security-home-content-btn");
-      var button_list = button.querySelector(".home-content-list"); 
-
-      button.addEventListener("click", function(event){
-        event.preventDefault();
-        button_list.classList.toggle("show");
-      });
-    </script>
 
   </body>
 
