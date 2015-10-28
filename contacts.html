@@ -5,22 +5,17 @@
   	<title>A-security</title>
   	<link href="css/normalize.css" rel="stylesheet">
   	<link href="css/style.css" rel="stylesheet">
-  	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="img/favicon.jpg" type="image/jpg">
-	  <script type="text/javascript" src="js/ajax_forms.js"></script>
   </head>
-  <body>
-
-  <a class="index-btn" href="index.html">На главную</a>
-
-
+  <body class="body-crutch">
+    <a class="index-btn" href="index.html">На главную</a>
     <header class="main-header">
       <div class="mid-container clearfix">
         <nav>
           <ul class="main-navigation">
             <li>
               <a href="security-home.html">Для дома</a>
-
               <ul class="sub-navigation">
                 <li>
                   <a href="security-home.html">Дистанционная охрана домов</a>
@@ -29,11 +24,9 @@
                   <a href="security-flat.html">Дистанционная охрана квартир</a>
                 </li>
               </ul>
-
             </li>
             <li>
               <a href="security-business.html">Для бизнеса</a>
-
               <ul class="sub-navigation" style="left: -92px;">
                 <li>
                   <a href="security-business.html">Дистанционная охрана бизнеса</a>
@@ -42,7 +35,6 @@
                   <a href="security-physical.html">Физическа охрана объектов</a>
                 </li>
               </ul>
-
             </li>
             <li>
               <a href="security-personal.html">Прочие услуги</a>
@@ -168,44 +160,15 @@
       </form>
     </div>
 
+    <!--<div class="modal-content-window-2">
+      <p>Спасибо за заявку!</p>
+      <p>Наш менеджер свяжется с Вами<br> в ближайжее время</p>
+    </div>-->
+
     <script src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/ajax_forms.js"></script>`
 
-    <script>
-      var header_button = document.querySelector(".main-header-btn");
-      var footer_button = document.querySelector(".s-footer-callback");
-      var modal_window = document.querySelector(".modal-content-window");
-      var modal_background = document.querySelector(".modal-background");
-      var modal_content_close = modal_window.querySelector(".modal-content-close");
-
-      header_button.addEventListener("click", function(modal){
-        modal.preventDefault();
-        modal_window.classList.add("modal-content-show");
-        modal_background.classList.add("modal-content-show")
-      });
-
-
-      footer_button.addEventListener("click", function(modal){
-        modal.preventDefault();
-        modal_window.classList.add("modal-content-show");
-        modal_background.classList.add("modal-content-show")
-      });
-
-
-      modal_background.addEventListener("click", function(modal){
-        modal.preventDefault();
-        modal_window.classList.remove("modal-content-show");
-        modal_background.classList.remove("modal-content-show")
-      });
-
-
-      modal_content_close.addEventListener("click", function(modal){
-        modal.preventDefault();
-        modal_window.classList.remove("modal-content-show");
-        modal_background.classList.remove("modal-content-show")
-      });
-
-
-    </script>  
+    <script src="js/popup.js"></script>  
 
   
   
@@ -232,6 +195,7 @@
       }
         google.maps.event.addDomListener(window, "load", initialize);
     </script>
+
   </body>
 
 </html>
