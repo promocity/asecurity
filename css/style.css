@@ -2682,3 +2682,52 @@ h2{
 }
 
 
+
+
+
+
+
+
+
+
+
+.services-caption {
+	display: inline-block;
+	width: 195px;
+	color: #01063c;
+	font: 18px "Roboto", "Arial", sans-serif;
+	font-weight: bold;
+	padding: 230px 0 0 0;
+}
+
+.caption-1 {
+	padding: 230px 0 0 0px;	
+	margin-left: -79px;
+}
+
+.caption-2 {
+	padding: 230px 0 0 0;
+	margin-left: -50px;
+}
+
+.caption-3 {
+	padding: 230px 0 0 0;
+	margin-right: -32px;
+}
+
+.caption-4 {
+	padding: 287px 0 0 0;
+	margin-left: -98px;	
+}
+
+.caption-5 {
+	padding: 287px 0 0 0;
+	margin-left: -49px;	
+}
+
+.caption-6 {
+	padding: 287px 0 0 0;
+	margin-left: 1px;	
+}
+
+

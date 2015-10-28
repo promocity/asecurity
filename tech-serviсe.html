@@ -6,7 +6,7 @@
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" href="img/favicon.jpg" type="image/jpg">
+	<script type="text/javascript" src="js/ajax_forms.js"></script>
   </head>
   <body>
 
@@ -62,7 +62,7 @@
 
             </li>
             <li>
-              <a href="tech-serviсe.html">Технический сервис</a>
+              <a href="#">Технический сервис</a>
             </li>
             <li>
               <a href="promo.html">О компании</a>
@@ -71,7 +71,7 @@
               <a href="contacts.html">Контакты</a>
             </li>
             <li>
-              <a href="">+7 (343) 288 78 56</a>
+              <a href="#">+7 (343) 288 78 56</a>
             </li>
           </ul>
         </nav>
@@ -89,22 +89,22 @@
 		<p class="tech-serv-text">Работая с компанией ASecurity, Вы получаете возможность пользоваться передовыми системами безопасности и контороля. Мы предоставляем услуги монтажа и технического сопровождения систем:</p>
 		<ul class="services clearfix">
 			<li>
-				<p class="services-caption">Охранная и пожарная сигнализация</p>
+				<p class="services-caption caption-1">Охранная и пожарная сигнализация</p>
 			</li>
 			<li>
-				<p class="services-caption">Контроль и управление доступом</p>
+				<p class="services-caption caption-2">Контроль и управление доступом</p>
 			</li>
 			<li>
-				<p class="services-caption">Речевое оповещение и эвакуация людей</p>
+				<p class="services-caption caption-3">Речевое оповещение и эвакуация людей</p>
 			</li>
 			<li>
-				<p class="services-caption">Видеонаблюдение<span>(в том числе в online режиме)</span></p>
+				<p class="services-caption caption-4">Видеонаблюдение<span>(в том числе в online режиме)</span></p>
 			</li>
 			<li>
-				<p class="services-caption">Система пожаротушения</p>
+				<p class="services-caption caption-5">Система пожаротушения</p>
 			</li>
 			<li>
-				<p class="services-caption">Система дымоудаления</p>
+				<p class="services-caption caption-6">Система дымоудаления</p>
 			</li>
 		</ul>
    </section>
@@ -147,7 +147,7 @@
         </div>  
         <div class="s-footer-contacts">
           <ul>
-            <li><a href="tech-serviсe.html">Технический сервис</a></li>
+            <li><a href="#">Технический сервис</a></li>
             <li><a href="promo.html">О компании</a></li>
             <li><a href="contacts.html">Контакты</a></li>
           </ul>
@@ -163,7 +163,7 @@
 
       <div class="modal-background"></div>
 
-        <div class="modal-content-window">
+    <div class="modal-content-window">
       <form action="/echo" method="post">
         <div class="modal-content-close"></div>
         <div class="modal-content-title">Заказать<br> обратный звонок</div>
@@ -172,17 +172,15 @@
           Специалист компании ASecurity свяжется с Вами,<br>
           чтобы ответить на Ваши вопросы.
         </p>
-        <input type="text" name="Имя" id="modal_call_name" placeholder="Имя">
-        <input type="tel" name="Телефон" id="modal_call_tel" placeholder="Телефон">
-        <button type="button" onclick="Modal_Callme()">Заказать</button>
+        <input type="text" name="Имя" id="call_name" placeholder="Имя">
+        <input type="tel" name="Телефон" id="call_tel" placeholder="Телефон">
+        <button type="button" onclick="Callme()">Заказать</button>
         <span>или перезвоните нам по телефону</span>
         <span>+7 (343) 288-78-56</span>
       </form>
     </div>
 
-    <script src="js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="js/ajax_forms.js"></script>
-    
+
     <script>
       var header_button = document.querySelector(".main-header-btn");
       var footer_button = document.querySelector(".s-footer-callback");
