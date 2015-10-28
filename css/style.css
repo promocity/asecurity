@@ -2,7 +2,6 @@ body {
 	min-width:1210px;
 	font-family:"Roboto", "Arial", sans-serif;
 	color:#000;
-
 }
 
 
@@ -816,6 +815,8 @@ h2{
   animation-fill-mode:both;
 
   position:relative;
+
+  overflow:hidden;
 }
 
 
@@ -909,6 +910,8 @@ h2{
   animation-fill-mode:both;
 
   position:relative;
+
+  overflow:hidden;
 }
 
 
@@ -946,6 +949,8 @@ h2{
   animation-fill-mode:both;
 
   position:relative;
+
+  overflow:hidden;
 }
 
 
@@ -981,6 +986,8 @@ h2{
   animation-fill-mode:both;
 
   position:relative;
+
+  overflow:hidden;
 }
 
 
@@ -1019,6 +1026,8 @@ h2{
   animation-fill-mode:both;
 
   position:relative;
+
+  overflow:hidden;
 }
 
 
