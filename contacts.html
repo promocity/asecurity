@@ -38,7 +38,6 @@
             </li>
             <li>
               <a href="security-personal.html">Прочие услуги</a>
-
               <ul class="sub-navigation" style="    left: -82px;">
                 <li>
                   <a href="security-personal.html">Личная охрана</a>
@@ -53,7 +52,6 @@
                   <a href="security-load.html">Сопровождение грузов</a>
                 </li>
               </ul>
-
             </li>
             <li>
               <a href="tech-serviсe.html">Технический сервис</a>
@@ -75,9 +73,6 @@
       </div>  
     </header>
   
-  
-  
-
     <div class="map">
       <div class="map-canvas" id="map-canvas"></div>
       <div class="map-contacts">
@@ -104,7 +99,7 @@
       </form>
     </div>
 
-  <footer class="second-footer clearfix">
+    <footer class="second-footer clearfix">
     <div class="mid-container">
       <div class="s-footer-logo">
         <p class="logo-caption">Комплексная система безопасности</p>
@@ -131,6 +126,7 @@
             <li><a href="tech-serviсe.html">Технический сервис</a></li>
             <li><a href="promo.html">О компании</a></li>
             <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
           </ul>
         </div>
       </div>
@@ -141,9 +137,9 @@
     </div>
   </footer>
 
-  <div class="modal-background"></div>
+    <div class="modal-background"></div>
 
-        <div class="modal-content-window">
+    <div class="modal-content-window">
       <form action="/echo" method="post">
         <div class="modal-content-close"></div>
         <div class="modal-content-title">Заказать<br> обратный звонок</div>
@@ -154,7 +150,7 @@
         </p>
         <input type="text" name="Имя" id="modal_call_name" placeholder="Имя">
         <input type="tel" name="Телефон" id="modal_call_tel" placeholder="Телефон">
-        <button type="button" onclick="Modal_Callme()">Заказать</button>
+        <button type="button" class="modal-content-button" onclick="Modal_Callme()">Заказать</button>
         <span>или перезвоните нам по телефону</span>
         <span>+7 (343) 288-78-56</span>
       </form>
@@ -167,14 +163,7 @@
 
     <script src="js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/ajax_forms.js"></script>`
-
     <script src="js/popup.js"></script>  
-
-  
-  
-
-
-
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
     <script>
       function initialize() {
@@ -195,7 +184,5 @@
       }
         google.maps.event.addDomListener(window, "load", initialize);
     </script>
-
   </body>
-
 </html>

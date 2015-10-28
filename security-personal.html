@@ -5,9 +5,6 @@
     <title>A-security</title>
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="owl-carousel/owl.carousel.css" rel="stylesheet">
-    <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
-    <link rel="stylesheet" href="owl-carousel/owl.theme.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="img/favicon.jpg" type="image/jpg">
   </head>
@@ -172,6 +169,7 @@
             <li><a href="tech-serviсe.html">Технический сервис</a></li>
             <li><a href="promo.html">О компании</a></li>
             <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
           </ul>
         </div>
       </div>
@@ -196,7 +194,7 @@
         </p>
         <input type="text" name="Имя" id="modal_call_name" placeholder="Имя">
         <input type="tel" name="Телефон" id="modal_call_tel" placeholder="Телефон">
-        <button type="button" onclick="Modal_Callme()">Заказать</button>
+        <button type="button" class="modal-content-button" onclick="Modal_Callme()">Заказать</button>
         <span>или перезвоните нам по телефону</span>
         <span>+7 (343) 288-78-56</span>
       </form>
@@ -204,46 +202,7 @@
 
     <script src="js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/ajax_forms.js"></script>
-
-    <script>
-      var header_button = document.querySelector(".main-header-btn");
-      var footer_button = document.querySelector(".s-footer-callback");
-      var modal_window = document.querySelector(".modal-content-window");
-      var modal_background = document.querySelector(".modal-background");
-      var modal_content_close = modal_window.querySelector(".modal-content-close");
-
-      header_button.addEventListener("click", function(modal){
-        modal.preventDefault();
-        modal_window.classList.add("modal-content-show");
-        modal_background.classList.add("modal-content-show")
-      });
-
-
-      footer_button.addEventListener("click", function(modal){
-        modal.preventDefault();
-        modal_window.classList.add("modal-content-show");
-        modal_background.classList.add("modal-content-show")
-      });
-
-
-      modal_background.addEventListener("click", function(modal){
-        modal.preventDefault();
-        modal_window.classList.remove("modal-content-show");
-        modal_background.classList.remove("modal-content-show")
-      });
-
-
-      modal_content_close.addEventListener("click", function(modal){
-        modal.preventDefault();
-        modal_window.classList.remove("modal-content-show");
-        modal_background.classList.remove("modal-content-show")
-      });
-
-
-    </script>  
-    
-
-    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/popup.js"></script>  
   </body>
 
 </html>

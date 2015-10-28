@@ -1,7 +1,16 @@
+function OutData(inResultForm){
+	Close_modal();
+	//валидация
+    //el.innerHTML = inResultForm;
+}
+function Close_modal(){
+	$('#modal-content-window-2').show(0).fadeTo( "slow", 1 ).delay(500).fadeTo( "slow", 0 );
+	setTimeout($('#modal-content-window-2').hide(0),1000);
+}
 function OrderSecurity(){	//отправка данных с формы заказа
     $.ajax({
         type: "POST",
-        url: "/actions.php",
+        url: "actions.php",
         data: 'action=InstallRequest'+
               '&order_person_name='+$('#order-person-name').val()+
               '&order_person_tel='+$('#order-person-tel').val()+
@@ -20,14 +29,15 @@ function OrderSecurity(){	//отправка данных с формы зака
 			Действия для вывода уведовлений
 			data - выводимый текст
 		*/
-                alert(data);
+			OutData(data);
         }
     });
+	
 }
 function FeedbackSend(){	//отправка отзыва
     $.ajax({
         type: "POST",
-        url: "/actions.php",
+        url: "actions.php",
         data: 'action=Feedback'+
               '&feedback_name='+$('#feedback_name').val()+
               '&feedback_text='+$('#feedback_text').val(),
@@ -36,14 +46,15 @@ function FeedbackSend(){	//отправка отзыва
 			Действия для вывода уведовлений
 			data - выводимый текст
 		*/
-                alert(data);
+            OutData(data);
         }
     });
+	
 }
 function Callme(){	//отправка заявки на звонок
     $.ajax({
         type: "POST",
-        url: "/actions.php",
+        url: "actions.php",
         data: 'action=Callme'+
               '&call_name='+$('#call_name').val()+
               '&call_tel='+$('#call_tel').val(),
@@ -52,14 +63,15 @@ function Callme(){	//отправка заявки на звонок
 			Действия для вывода уведовлений
 			data - выводимый текст
 		*/
-                alert(data);
+            OutData(data);
         }
     });
+	
 }
 function Modal_Callme(){	//отправка заявки на звонок с модального окна
     $.ajax({
         type: "POST",
-        url: "/actions.php",
+        url: "actions.php",
         data: 'action=Callme'+
               '&call_name='+$('#modal_call_name').val()+
               '&call_tel='+$('#modal_call_tel').val(),
@@ -68,14 +80,15 @@ function Modal_Callme(){	//отправка заявки на звонок с м
 			Действия для вывода уведовлений
 			data - выводимый текст
 		*/
-                alert(data);
+            OutData(data);
         }
     });
+	
 }
 function SendQuestion(){	//отправка вопроса
 	$.ajax({
         type: "POST",
-        url: "/actions.php",
+        url: "actions.php",
         data: 'action=Question'+
               '&contact_name='+$('#contact_name').val()+
               '&contact_tel='+$('#contact_tel').val()+
@@ -85,7 +98,9 @@ function SendQuestion(){	//отправка вопроса
 			Действия для вывода уведовлений
 			data - выводимый текст
 		*/
-                alert(data);
+            OutData(data);
+               
         }
     });
+	
 }

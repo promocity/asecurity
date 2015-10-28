@@ -36,7 +36,7 @@
 	//действие получаемое из формы
 	$action = escape_chars($_POST['action']);
 	//емейл
-	$email = 'packeger@yandex.ru';
+	$email = 'info@rfsecurity.ru';
 	//info@rfsecurity.ru
 	
 	

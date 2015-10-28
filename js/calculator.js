@@ -1,4 +1,4 @@
-//ÒÓÒÚÓˇÌËˇ Ì‡Ê‡Ú˚ı ˜ÂÍ·ÓÍÒÓ‚ ÔÓ ÛÏÓÎ˜‡ÌË˛
+//—Å–æ—Å—Ç–æ¬§–Ω–∏¬§ –Ω–∞–∂–∞—Ç—ã—Ö —á–µ–∫–±–æ–∫—Å–æ–≤ –ø–æ —É–º–æ–ª—á–∞–Ω–∏—é
 var default_signality = true;
 var default_alarm_button = false;
 var default_gas = false;
@@ -9,9 +9,9 @@ var default_night = false;
 var default_online_control = false;
 
 function calculate(clicked_element,page){	
-	//ˆÂÌÓ‚˚Â ÁÌ‡˜ÂÌËˇ ‰Îˇ Í‡Ê‰ÓÈ ËÁ ÒÚ‡ÌËˆ
-        //...price1 - ÒÚÓËÏÓÒÚ¸ ÛÒÚ‡ÌÓ‚ÍË
-        //...price2 - ÒÚÓËÏÓÒÚ¸  Ó·ÒÎÛÊË‚‡ÌËˇ
+	//—Ü–µ–Ω–æ–≤—ã–µ –∑–Ω–∞—á–µ–Ω–∏¬§ –¥–ª¬§ –∫–∞–∂–¥–æ–π –∏–∑ —Å—Ç—Ä–∞–Ω–∏—Ü
+        //...price1 - —Å—Ç–æ–∏–º–æ—Å—Ç—å —É—Å—Ç–∞–Ω–æ–≤–∫–∏
+        //...price2 - —Å—Ç–æ–∏–º–æ—Å—Ç—å  –æ–±—Å–ª—É–∂–∏–≤–∞–Ω–∏¬§
         switch (page){
             case 'home':
                 var signaling_price1 = 17790;
@@ -75,14 +75,14 @@ function calculate(clicked_element,page){
                 break;
         }
 	
-        //ˆÂÌ‡ ‚‚ÂıÛ ÒÚ‡ÌËˆ˚
+        //—Ü–µ–Ω–∞ –≤–≤–µ—Ä—Ö—É —Å—Ç—Ä–∞–Ω–∏—Ü—ã
 	var price_up = document.getElementById('security-home-content-price');
 	
-	//ÛÒÎÛ„Ë
+	//—É—Å–ª—É–≥–∏
 	var signaling = document.getElementById('signaling');
 	var alarm_button = document.getElementById('alarm-button');
 	
-	//‰ÓÔ. ÛÒÎÛ„Ë
+	//–¥–æ–ø. —É—Å–ª—É–≥–∏
 	var gas = document.getElementById('gas');
 	var fire = document.getElementById('fire');
 	var water = document.getElementById('water');
@@ -90,15 +90,15 @@ function calculate(clicked_element,page){
 	var night = document.getElementById('night');
 	var online_control = document.getElementById('online_control');
 	
-	//ÒÚÓËÏÓÒÚ¸ Ë ˆÂÌ‡ ‚ ÏÂÒ§ˆ ‚ÌËÁÛ ÒÚ‡ÌËˆ˚
+	//—Å—Ç–æ–∏–º–æ—Å—Ç—å –∏ —Ü–µ–Ω–∞ –≤ –º–µ—Å¬ß—Ü –≤–Ω–∏–∑—É —Å—Ç—Ä–∞–Ω–∏—Ü—ã
 	var price_down1 = document.getElementById('price-block-price');
 	var price_down2 = document.getElementById('price-block-price-month');
         
-        //ËÚÓ„Ó‚˚È ÂÁÛÎ¸Ú‡Ú
+        //–∏—Ç–æ–≥–æ–≤—ã–π —Ä–µ–∑—É–ª—å—Ç–∞—Ç
 	var price1_result = 0 ;
 	var price2_result = 0 ;
 	
-        //·ÎÓÍ ‰ÓÔÓÎÌËÚÂÎ¸Ì˚ı ÛÒÎÛ„
+        //–±–ª–æ–∫ –¥–æ–ø–æ–ª–Ω–∏—Ç–µ–ª—å–Ω—ã—Ö —É—Å–ª—É–≥
 	var signaling2 = document.getElementById('additional-block-security');
 	var alarm_button2 = document.getElementById('additional-block-alarm-button');
 	var gas2 = document.getElementById('additional-block-gas');
@@ -109,7 +109,7 @@ function calculate(clicked_element,page){
 	var online_control2 = document.getElementById('additional-block-online-control');
 	
 	if (clicked_element != ''){
-        //Á‡ÏÂÌ‡ ÓÚÏÂÚÍË ˜ÂÍ·ÓÍÒ‡ Ì‡ ÔÓÚË‚ÓÔÓÎÓÊÌÛ˛
+        //–∑–∞–º–µ–Ω–∞ –æ—Ç–º–µ—Ç–∫–∏ —á–µ–∫–±–æ–∫—Å–∞ –Ω–∞ –ø—Ä–æ—Ç–∏–≤–æ–ø–æ–ª–æ–∂–Ω—É—é
 		if (clicked_element == signaling || clicked_element == signaling2){
 			default_signality = !default_signality;
 		}
@@ -136,7 +136,7 @@ function calculate(clicked_element,page){
 		}
 	}
 	
-        //ÔË·‡‚ÎÂÌËÂ Í ÒÛÏÏÂ ÓÚÏÂ˜ÂÌÌ˚ı ˜ÂÍ·ÓÍÒÓ‚
+        //–ø—Ä–∏–±–∞–≤–ª–µ–Ω–∏–µ –∫ —Å—É–º–º–µ –æ—Ç–º–µ—á–µ–Ω–Ω—ã—Ö —á–µ–∫–±–æ–∫—Å–æ–≤
 	if (default_signality == true){
 		price1_result += signaling_price1;
 		price2_result += signaling_price2;
@@ -217,10 +217,10 @@ function calculate(clicked_element,page){
 		$("#online_control").prop("checked", false);
 	}
 	
-        //‚˚‚Ó‰ ÂÁÛÚ‡ÚÓ‚ ÒÚÓËÏÓÒÚË ÛÒÎÛ„
-        //‚Ò∏ ˜ÚÓ ÌËÊÂ ÌÛÊÌÓ, ˜ÚÓ·˚ ·˚Î ÔÓ·ÂÎ ÔÓÒÎÂ Ú˚Òˇ˜Ë
-        //price1_result_1000 - ˜ËÒÎËÚÂÎ¸ ÓÚ ‰ÂÎÂÌËˇ Ì‡ Ú˚Òˇ˜Û ÒÚÓËÏÓÒÚË ÛÒÎÛ„
-        //price1_result_1    - ÓÒÚ‡ÚÓÍ ÓÚ ‰ÂÎÂÌËˇ Ì‡ Ú˚Òˇ˜Û ÒÚÓËÏÓÒÚË ÛÒÎÛ„
+        //–≤—ã–≤–æ–¥ —Ä–µ–∑—É—Ç–∞—Ç–æ–≤ —Å—Ç–æ–∏–º–æ—Å—Ç–∏ —É—Å–ª—É–≥
+        //–≤—Å–Ñ —á—Ç–æ –Ω–∏–∂–µ –Ω—É–∂–Ω–æ, —á—Ç–æ–±—ã –±—ã–ª –ø—Ä–æ–±–µ–ª –ø–æ—Å–ª–µ —Ç—ã—Å¬§—á–∏
+        //price1_result_1000 - —á–∏—Å–ª–∏—Ç–µ–ª—å –æ—Ç –¥–µ–ª–µ–Ω–∏¬§ –Ω–∞ —Ç—ã—Å¬§—á—É —Å—Ç–æ–∏–º–æ—Å—Ç–∏ —É—Å–ª—É–≥
+        //price1_result_1    - –æ—Å—Ç–∞—Ç–æ–∫ –æ—Ç –¥–µ–ª–µ–Ω–∏¬§ –Ω–∞ —Ç—ã—Å¬§—á—É —Å—Ç–æ–∏–º–æ—Å—Ç–∏ —É—Å–ª—É–≥
 	if (price1_result > 999){
 		price1_result_1000 = Math.trunc(price1_result / 1000);
 		price1_result_1 = price1_result % 1000;
@@ -241,23 +241,23 @@ function calculate(clicked_element,page){
 		price_down1.innerHTML = price1_result+' P';
 	}
         
-        //‚˚‚Ó‰ ÂÁÛÚ‡ÚÓ‚ ÒÚÓËÏÓÒÚË Ó·ÒÎÛÊË‚‡ÌËˇ
-        //price2_result_1000 - ˜ËÒÎËÚÂÎ¸ ÓÚ ‰ÂÎÂÌËˇ Ì‡ Ú˚Òˇ˜Û ÒÚÓËÏÓÒÚË Ó·ÒÎÛÊË‚‡ÌËˇ
-        //price2_result_1    - ÓÒÚ‡ÚÓÍ ÓÚ ‰ÂÎÂÌËˇ Ì‡ Ú˚Òˇ˜Û ÒÚÓËÏÓÒÚË Ó·ÒÎÛÊË‚‡ÌËˇ
+        //–≤—ã–≤–æ–¥ —Ä–µ–∑—É—Ç–∞—Ç–æ–≤ —Å—Ç–æ–∏–º–æ—Å—Ç–∏ –æ–±—Å–ª—É–∂–∏–≤–∞–Ω–∏¬§
+        //price2_result_1000 - —á–∏—Å–ª–∏—Ç–µ–ª—å –æ—Ç –¥–µ–ª–µ–Ω–∏¬§ –Ω–∞ —Ç—ã—Å¬§—á—É —Å—Ç–æ–∏–º–æ—Å—Ç–∏ –æ–±—Å–ª—É–∂–∏–≤–∞–Ω–∏¬§
+        //price2_result_1    - –æ—Å—Ç–∞—Ç–æ–∫ –æ—Ç –¥–µ–ª–µ–Ω–∏¬§ –Ω–∞ —Ç—ã—Å¬§—á—É —Å—Ç–æ–∏–º–æ—Å—Ç–∏ –æ–±—Å–ª—É–∂–∏–≤–∞–Ω–∏¬§
 	if (price2_result > 999){
 		price2_result_1000 = Math.trunc(price2_result / 1000);
 		price2_result_1 = price2_result % 1000;
 		if (price2_result_1>=0 && price2_result_1<=9){
-			price_down2.innerHTML = price2_result_1000+' 00'+price2_result_1+' P';	
+			price_down2.innerHTML = price2_result_1000+' 00'+price2_result_1+' –†<span>–≤ –º–µ—Å—è—Ü</span>';	
 		}
 		if(price2_result_1>0 && price2_result_1<=99){
-			price_down2.innerHTML = price2_result_1000+' 0'+price2_result_1+' P';	
+			price_down2.innerHTML = price2_result_1000+' 0'+price2_result_1+' –†<span>–≤ –º–µ—Å—è—Ü</span>';	
 		}
 		if (price2_result_1>99){
-			price_down2.innerHTML = price2_result_1000+' '+price2_result_1+' P';	
+			price_down2.innerHTML = price2_result_1000+' '+price2_result_1+' –†<span>–≤ –º–µ—Å—è—Ü</span>';	
 		}
 	}else{
-		price_down2.innerHTML = price2_result+' P';
+		price_down2.innerHTML = price2_result+' –†<span>–≤ –º–µ—Å—è—Ü</span>';
 	}
 	
 	
