@@ -3257,3 +3257,31 @@ h2
 
     color: #88888a;
 }
+
+
+
+
+
+
+.owl-prev{
+  position:absolute;
+  left:-10%;
+  top:30%;
+}
+
+
+.owl-next{
+  position:absolute;
+  right:-10%;
+  top:30%;
+}
+
+
+.owl-theme .owl-controls .owl-buttons div::after{
+  background:red;
+  width:10px;
+  height:10px;
+  position:absolute;
+  top:0;
+  right:0;
+}

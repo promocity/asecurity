@@ -200,7 +200,7 @@
     <div class="modal-background"></div>
 
     <div class="modal-content-window">
-      <form action="/echo" method="post">
+      <form action="index.html" method="post" class="popup-form">
         <div class="modal-content-close"></div>
         <div class="modal-content-title">Заказать<br> обратный звонок</div>
         <p>
@@ -208,8 +208,8 @@
           Специалист компании ASecurity свяжется с Вами,<br>
           чтобы ответить на Ваши вопросы.
         </p>
-        <input type="text" name="Имя" id="modal_call_name" placeholder="Имя">
-        <input type="tel" name="Телефон" id="modal_call_tel" placeholder="Телефон">
+        <input type="text" name="Имя" id="modal_call_name" placeholder="Имя" class="required name">
+        <input type="tel" name="Телефон" id="modal_call_tel" placeholder="Телефон" class="required tel">
         <button type="button" class="modal-content-button" onclick="Modal_Callme()">Заказать</button>
         <span>или перезвоните нам по телефону</span>
         <span>+7 (343) 288-78-56</span>
@@ -225,6 +225,8 @@
     <script src="js/ajax_forms-min.js"></script>
     <script src="js/popup-min.js"></script>  
     <script src="js/logo-flip-min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/main.js"></script>
     
   </body>
 </html>
