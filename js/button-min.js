@@ -1,0 +1,1 @@
+var button=document.querySelector(".security-home-content-btn"),button_list=button.querySelector(".home-content-list");button.addEventListener("click",function(t){t.preventDefault(),button_list.classList.toggle("show")});

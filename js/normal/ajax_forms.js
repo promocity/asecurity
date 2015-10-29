@@ -1,12 +1,10 @@
 function OutData(inResultForm){
-	Close_modal();
+	//Close_modal();
 	//валидация
     //el.innerHTML = inResultForm;
 }
-function Close_modal(){
-	$('#modal-content-window-2').show(0).fadeTo( "slow", 1 ).delay(500).fadeTo( "slow", 0 );
-	setTimeout($('#modal-content-window-2').hide(0),1000);
-}
+
+
 function OrderSecurity(){	//отправка данных с формы заказа
     $.ajax({
         type: "POST",
