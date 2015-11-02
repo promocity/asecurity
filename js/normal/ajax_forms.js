@@ -2,6 +2,10 @@ function OutData(inResultForm){
 	//Close_modal();
 	//валидация
     //el.innerHTML = inResultForm;
+	$('#modal-content-window-2').attr('class', 'modal-content-window-2');
+	$('#modal-content-window-2').addClass('modal-content-window-2-show');
+	setTimeout(function(){$('#modal-content-window-2').attr('class', 'modal-content-window-2')},10000);
+	console.log(inResultForm);
 }
 
 
