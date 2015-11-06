@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>ASecurity</title>
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/style-min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="img/favicon.jpg" type="image/jpg">
   </head>
@@ -100,7 +100,8 @@
             <img class="small-banner-img small-banner-img-1" src="img/index-small-banner-1-active.png" width="345" height="200" alt="">
           </a>
           <a class="index-logo-banner" href="javascript:void(0);">
-            <img src="img/index-logo-banner.png" width="136" height="158" alt="">
+            <img src="img/logo-gif-static.gif" width="136" height="158" alt="">
+            <img src="img/logo-gif.gif" width="136" height="158" alt="">
           </a>
           <a class="index-small-banner" href="security-physical.html">
             <img src="img/index-small-banner-2.png" width="170" height="194" alt="">
@@ -230,7 +231,26 @@
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/ajax_forms-min.js"></script>
     <script src="js/popup-min.js"></script>  
-    <script src="js/logo-flip-min.js"></script>
+    <!--<script src="js/logo-flip-min.js"></script>-->
     
+
+
+    <script>
+
+      var index_logo_main = document.querySelector(".index-logo-banner")
+      var index_logo_1 = document.querySelector(".index-logo-banner img:nth-child(1)")
+      var index_logo_2 = document.querySelector(".index-logo-banner img:nth-child(2)")
+
+
+      index_logo_main.addEventListener("mouseover", function(event){
+        index_logo_1.style.cssText="display:none;"
+        index_logo_2.style.cssText="display:block;"
+      });
+
+      index_logo_main.addEventListener("mouseout", function(event){
+        index_logo_1.style.cssText="display:block;"
+        index_logo_2.style.cssText="display:none;"
+      });
+    </script>
   </body>
 </html>

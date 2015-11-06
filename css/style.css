@@ -70,6 +70,18 @@ h2
 }
 
 
+.index-logo-banner img:nth-child(1) {
+  display:block;
+}
+
+
+.index-logo-banner img:nth-child(2) {
+  display:none;
+}
+
+
+
+
     
 
 
@@ -2854,7 +2866,11 @@ h2
 
 .modal-content-show
 {
-    display: block;
+    display: block !important;
+}
+
+.modal-content-hide {
+  display:none !important;
 }
 
 
